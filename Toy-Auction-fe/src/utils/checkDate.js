@@ -8,7 +8,7 @@ function checkDate(dateString) {
 
   // Get the current date
   const currentDate = new Date();
-  console.log({ dateObject }, { currentDate });
+
   // Check if the formatted date is in the past
   if (dateObject < currentDate) {
     return "Hết thời gian";

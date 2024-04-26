@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./common/header/Header";
-import Pages from "./pages/Pages";
+import Pages from "./pages/home/Pages";
 import Data from "./components/Data";
 import Cart from "./common/Cart/Cart";
 import Footer from "./common/footer/Footer";
-import Sdata from "./components/shops/Sdata";
+// import Sdata from "./components/shops/Sdata";
 import NewSdata from "./components/shops/NewSdata";
+import { AuthProvider } from "./context";
+import AppRoute from "./components/approuter/AppRoute";
+import Login from "./pages/login/Login";
 
 function App() {
   /*
@@ -26,7 +29,7 @@ function App() {
   const { productItems } = Data;
   // const { shopItems } = Sdata;
   const { shopItems } = NewSdata;
-  console.log({ shopItems });
+
   //Step 2 :
   const [CartItem, setCartItem] = useState([]);
 
@@ -83,26 +86,44 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Header CartItem={CartItem} />
-        <Switch>
-          <Route path="/" exact>
-            <Pages
-              productItems={productItems}
-              addToCart={addToCart}
-              shopItems={shopItems}
+      <AuthProvider>
+        <Router>
+          <Header CartItem={CartItem} />
+          <Switch>
+            {/* Public route */}
+            <Route path="/" exact>
+              <Pages
+                productItems={productItems}
+                addToCart={addToCart}
+                shopItems={shopItems}
+              />
+            </Route>
+            <Route path="/login" exact>
+              <Login />
+            </Route>
+            <Route path="/cart" exact>
+              <Cart
+                CartItem={CartItem}
+                addToCart={addToCart}
+                decreaseQty={decreaseQty}
+              />
+            </Route>
+            {/* Private route*/}
+            <AppRoute
+              path={"/home"}
+              component={
+                <Pages
+                  productItems={productItems}
+                  addToCart={addToCart}
+                  shopItems={shopItems}
+                />
+              }
+              isPrivate={true}
             />
-          </Route>
-          <Route path="/cart" exact>
-            <Cart
-              CartItem={CartItem}
-              addToCart={addToCart}
-              decreaseQty={decreaseQty}
-            />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
+          </Switch>
+          <Footer />
+        </Router>
+      </AuthProvider>
     </>
   );
 }

@@ -53,7 +53,7 @@ import { useHistory } from "react-router-dom";
 
 const ShopCart = ({ shopItems, addToCart }) => {
   const history = useHistory();
-  console.log({ shopItems });
+
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);

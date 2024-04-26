@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -8,7 +14,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: #ffffff;
 }
 .background {
@@ -52,6 +58,7 @@ button {
   border: none;
   outline: none;
   background-color: none;
+  padding: 16px;
 }
 .row {
   width: 50%;
@@ -153,8 +160,11 @@ button {
   justify-content: space-between;
   color: #e94560;
 }
+.product .price p {
+  color: rgb(3 0 71 / 100%);
+}
 .price button {
-  background: none;
+  /* background: none; */
   color: #e94560;
   font-size: 20px;
   transition: 0.5s;
@@ -162,6 +172,28 @@ button {
   width: 35px;
   height: 35px;
   border-radius: 5px;
+}
+button {
+  border-radius: 5px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.action button {
+  /* background: none; */
+  color: #e94560;
+  font-size: 20px;
+  transition: 0.5s;
+  border: 1px solid #e94560;
+  width: 90%;
+  height: 40px;
+  border-radius: 5px;
+}
+.action button:hover {
+  cursor: pointer;
+  background-color: #e94560;
+  color: #fff;
 }
 .price button:hover {
   cursor: pointer;
@@ -235,6 +267,8 @@ button {
 .heading .heading-right {
   text-align: right;
   color: grey;
+  display: flex;
+  justify-content: flex-end;
 }
 /*----- heading -------*/
 .grid {

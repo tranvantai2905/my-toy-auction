@@ -1,33 +1,43 @@
-import React from "react"
-import Catg from "./Catg"
-import ShopCart from "./ShopCart"
-import "./style.css"
+import React from "react";
+import Catg from "./Catg";
+import ShopCart from "./ShopCart";
+import "./style.css";
+import theme from "../../theme";
+import { MdArrowOutward } from "react-icons/md";
 
+const primaryColor = theme.primary;
 const Shop = ({ addToCart, shopItems }) => {
   return (
     <>
-      <section className='shop background'>
-        <div className='container d_flex'>
+      <section className="shop background">
+        <div className="container d_flex">
           <Catg />
 
-          <div className='contentWidth'>
-            <div className='heading d_flex'>
-              <div className='heading-left row  f_flex'>
-                <h2>Mobile Phones</h2>
+          <div className="contentWidth">
+            <div className="heading d_flex py-10">
+              <div className="heading-left flex flex-col gap-2">
+                <p className={`text-primary-500 text-base font-medium`}>
+                  Tài sản đấu giá
+                </p>
+                <p className="font-medium text-3xl">Tài sản sắp được đấu giá</p>
               </div>
-              <div className='heading-right row '>
-                <span>View all</span>
-                <i className='fa-solid fa-caret-right'></i>
+              <div className="heading-right row">
+                <button
+                  className={`flex justify-center items-center gap-4 bg-primary text-white`}
+                >
+                  <p className="text-base font-bold">Xem toàn bộ tài sản</p>
+                  <MdArrowOutward />
+                </button>
               </div>
             </div>
-            <div className='product-content  grid1'>
+            <div className="product-content  grid1">
               <ShopCart addToCart={addToCart} shopItems={shopItems} />
             </div>
           </div>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Shop
+export default Shop;

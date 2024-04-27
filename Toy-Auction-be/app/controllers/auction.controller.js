@@ -60,7 +60,7 @@ async function createAuction(req, res) {
 }
 
 async function addBidToAuction(req, res) {
-  const auctionId = req.params.id;
+  const auctionId = req.params.auctionId;
 
   const { bidder, amount } = req.body;
 
@@ -80,14 +80,22 @@ async function addBidToAuction(req, res) {
     const bid = new Bid({
       bidder: bidder,
       amount: amount,
+      auction: auctionId,
     });
     await bid.save();
 
     auction.bids.push(bid);
 
-    const updatedAuction = await auction.save();
+    await auction.save();
+    const resultAuction = await Auction.findById(auctionId)
+      .populate("product")
+      .populate({
+        path: "bids",
+        populate: { path: "bidder" },
+      })
+      .exec();
 
-    res.status(201).json(updatedAuction);
+    res.status(201).json(resultAuction);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
@@ -182,6 +190,59 @@ async function deleteAuction(req, res) {
   }
 }
 
+const checkWinnerCll = async (req, res) => {
+  const auctionId = req.params.auctionId;
+
+  try {
+    const winnerBid = await checkWinner(auctionId);
+
+    if (winnerBid) {
+      res.json(winnerBid);
+    } else {
+      res.status(500).json({
+        message: "Auction not yet finished",
+      });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+async function checkWinner(auctionId) {
+  const auction = await Auction.findById(auctionId);
+  if (!auction) {
+    throw new Error(`Auction không tồn tại với ID: ${auctionId}`);
+  }
+
+  const currentTime = new Date();
+  if (currentTime <= auction.depositTime.to) {
+    return null;
+  }
+
+  if (!auction.winnerBid) {
+    const highestBid = await Bid.find({ auction: auctionId })
+      .sort({ amount: -1 })
+      .limit(1);
+    if (!highestBid.length) {
+      return null;
+    }
+
+    auction.winnerBid = highestBid[0]._id;
+    await auction.save();
+  }
+  let highestBid = auction.winnerBid;
+  const winnerBid = await Bid.findById(highestBid).populate({
+    path: "bidder",
+    select: "username email",
+    populate: { path: "roles" },
+  });
+  winnerBid.isWin = true;
+  await winnerBid.save();
+
+  return winnerBid;
+}
+
 module.exports = {
   getAllAuctions,
   createAuction,
@@ -190,4 +251,5 @@ module.exports = {
   updateBidInAuction,
   deleteAuction,
   getAuction,
+  checkWinnerCll,
 };

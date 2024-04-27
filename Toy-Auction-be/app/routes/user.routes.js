@@ -25,6 +25,13 @@ module.exports = function (app) {
   //   [authJwt.verifyToken, authJwt.isAdmin],
   //   controller.adminBoard
   // );
-  app.get("/api/user", controller.getAllUsers);
-  app.get("/api/user/:id", controller.getUser);
+  app.get("/api/users", controller.getAllUsers);
+  app.get("/api/users/:id", controller.getUser);
+  app.get("/api/users/:id/bids", controller.getBidsByUser);
+  app.get("/api/user/myBids", [authJwt.verifyToken], controller.getMyBids);
+  app.get(
+    "/api/user/myWinnerBids",
+    [authJwt.verifyToken],
+    controller.getMyWinnerBids
+  );
 };

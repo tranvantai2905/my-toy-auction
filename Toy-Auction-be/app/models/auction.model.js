@@ -80,6 +80,10 @@ const AuctionSchema = mongoose.Schema(
         ref: "Bid",
       },
     ],
+    winnerBid: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Bid",
+    },
   },
   {
     timestamps: true,

@@ -117,8 +117,17 @@ header ul li a:hover {
   z-index: 1000;
   width: 100%;
   background-color: #fff;
+  opacity: 80%;
   box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.2);
   transition: 0.5s;
+  border-radius: 0 0 5px 30px;
+}
+.active .search-box {
+  border: 2px solid rgba(0, 0, 0, 1);
+}
+.active .search-box span {
+  color: #e94560;
+  opacity: 100%;
 }
 
 @media (max-width: 768px) {
@@ -129,7 +138,8 @@ header ul li a:hover {
     position: absolute;
     display: block;
     list-style: none;
-    box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     left: 0;
     top: 0;
     transition: all 0.5s ease-in-out;

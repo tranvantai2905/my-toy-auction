@@ -13,12 +13,20 @@ module.exports = function (app) {
 
   app.get("/api/auctions", controller.getAllAuctions);
   app.get("/api/auctions/:id", controller.getAuction);
-  app.post("/api/auctions", controller.createAuction);
-  app.post("/api/auctions/:id/bids", controller.addBidToAuction);
-  app.put("/api/auctions/:id", controller.updateAuction);
+  app.post("/api/auctions", [authJwt.verifyToken], controller.createAuction);
+  app.post(
+    "/api/auctions/:id/bids",
+    [authJwt.verifyToken],
+    controller.addBidToAuction
+  );
+  app.put("/api/auctions/:id", [authJwt.verifyToken], controller.updateAuction);
   app.put(
     "/api/auctions/:auctionId/bids/:bidId",
     controller.updateBidInAuction
   );
-  app.delete("/api/auctions/:id", controller.deleteAuction);
+  app.delete(
+    "/api/auctions/:id",
+    [authJwt.verifyToken],
+    controller.deleteAuction
+  );
 };

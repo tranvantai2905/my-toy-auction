@@ -14,6 +14,15 @@ const BidSchema = mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  isWin: {
+    type: Boolean,
+    default: false,
+  },
+  auction: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Auction",
+    required: true,
+  },
 });
 
 const AuctionSchema = mongoose.Schema(

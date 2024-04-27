@@ -7,7 +7,6 @@
   margin-bottom: 20px;
 }
 .chead h1:nth-child(2) {
-  opacity: 0.5;
   border-left: 3px solid rgba(0, 0, 0, 0.5);
   padding-left: 70px;
 }
@@ -18,12 +17,9 @@
   transition: 0.5s;
   border-radius: 5px;
 }
-.shop .category img {
-  width: auto;
-  height: auto;
-}
+
 .shop .category .box:hover {
-  background-color: #fff;
+  background-color: #e94560;
   box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
 }
 .shop .box2 {

@@ -2,12 +2,13 @@ const Branch = require("../models/branch.model"); // Import Branch model
 const Product = require("../models/product.model");
 
 const createBranch = async (req, res) => {
-  const { name, description, products } = req.body;
+  const { name, description, products, img } = req.body;
 
   const newBranch = new Branch({
     name,
     description,
     products,
+    img,
   });
 
   try {

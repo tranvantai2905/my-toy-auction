@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Home from "../../components/MainPage/Home";
 import FlashDeals from "../../components/flashDeals/FlashDeals";
 import TopCate from "../../components/top/TopCate";
@@ -7,16 +7,28 @@ import Discount from "../../components/discount/Discount";
 import Shop from "../../components/shops/Shop";
 import Annocument from "../../components/annocument/Annocument";
 import Wrapper from "../../components/wrapper/Wrapper";
+import { getAuctionsApi } from "../../api/actions/auction";
 
-const Pages = ({ productItems, addToCart, CartItem, shopItems }) => {
+const Pages = ({ addToCart }) => {
+  const [auctions, setAuctions] = useState([]);
+
+  const getAuctions = async () => {
+    const res = await getAuctionsApi();
+
+    setAuctions(res);
+  };
+  useEffect(() => {
+    getAuctions();
+  }, []);
+
   return (
     <>
-      <Home CartItem={CartItem} />
+      <Home />
       {/* <FlashDeals productItems={productItems} addToCart={addToCart} /> */}
       {/* <TopCate /> */}
       <NewArrivals />
       {/* <Discount /> */}
-      <Shop shopItems={shopItems} addToCart={addToCart} />
+      <Shop auctionItems={auctions} addToCart={addToCart} />
       {/* <Annocument /> */}
       <Wrapper />
     </>

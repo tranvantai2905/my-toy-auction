@@ -1,3 +1,5 @@
+import { postLoginApi } from "../api/actions/auth";
+
 const ROOT_URL = "https://secret-hamlet-03431.herokuapp.com";
 
 const FAKE_RESPONSE = {
@@ -17,15 +19,14 @@ export async function loginUser(dispatch, loginPayload) {
 
   try {
     dispatch({ type: "REQUEST_LOGIN" });
-    // let response = await fetch(`${ROOT_URL}/login`, requestOptions);
+    let res = await postLoginApi(loginPayload);
     // let data = await response.json();
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    let response = FAKE_RESPONSE;
+    // let response = FAKE_RESPONSE;
+    console.log({ res });
+    let data = res;
 
-    let data = response;
-    console.log({ data });
-
-    if (data.user) {
+    if (data.accessToken) {
       dispatch({ type: "LOGIN_SUCCESS", payload: data });
       localStorage.setItem("currentUser", JSON.stringify(data));
       return data;

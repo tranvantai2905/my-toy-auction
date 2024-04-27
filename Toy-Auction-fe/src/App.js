@@ -92,11 +92,7 @@ function App() {
           <Switch>
             {/* Public route */}
             <Route path="/" exact>
-              <Pages
-                productItems={productItems}
-                addToCart={addToCart}
-                shopItems={shopItems}
-              />
+              <Pages addToCart={addToCart} />
             </Route>
             <Route path="/login" exact>
               <Login />

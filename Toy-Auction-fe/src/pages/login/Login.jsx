@@ -8,18 +8,17 @@ const Login = () => {
 
   const history = useHistory();
 
-  const [email, setEmail] = useState("");
+  const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    let payload = { email, password };
+    let payload = { username, password };
 
     // async request to the server
     try {
       let response = await loginUser(dispatch, payload);
-      console.log({ response });
-      if (!response.user) return;
+      if (!response.accessToken) return;
       history.push("/"); //navigate to dashboard on success
     } catch (error) {
       console.log(error);
@@ -39,20 +38,19 @@ const Login = () => {
           <form className="space-y-6">
             <div>
               <label
-                htmlFor="email"
+                htmlFor="username"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Phone Number/ Email address
+                Phone Number/ User Name
               </label>
               <div className="mt-2">
                 <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
+                  id="username"
+                  name="username"
+                  type="text"
                   required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={username}
+                  onChange={(e) => setUserName(e.target.value)}
                   className="block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 "
                 />
               </div>

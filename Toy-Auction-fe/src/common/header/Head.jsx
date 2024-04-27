@@ -37,7 +37,7 @@ const Head = () => {
             <label>USD</label>
             {userDetails.user ? (
               <div className="flex items-center">
-                <p className="text-sm">{userDetails.user.fullName}</p>
+                <p className="text-sm">{userDetails.user.username}</p>
                 <button
                   className="text-sm hover:underline"
                   onClick={handleLogout}

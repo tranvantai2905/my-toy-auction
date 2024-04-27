@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect, useState } from "react";
+import { getBranchesApi } from "../../api/actions/branch";
 
 const Catg = () => {
   const data = [
@@ -26,28 +27,36 @@ const Catg = () => {
       cateImg: "./images/category/cat-2.png",
       cateName: "Sony",
     },
-  ]
+  ];
+  const [branches, setBranches] = useState([]);
+  const getBranches = async () => {
+    const res = await getBranchesApi();
+    setBranches(res);
+  };
+  useEffect(() => {
+    getBranches();
+  }, []);
   return (
     <>
-      <div className='category'>
-        <div className='chead d_flex'>
+      <div className="category">
+        <div className="chead d_flex">
           <h1>Brands </h1>
           <h1>Shops </h1>
         </div>
-        {data.map((value, index) => {
+        {branches.map((branch, index) => {
           return (
-            <div className='box f_flex' key={index}>
-              <img src={value.cateImg} alt='' />
-              <span>{value.cateName}</span>
+            <div className="box f_flex" key={index}>
+              <img src={branch.img} alt="" />
+              <span>{branch.name}</span>
             </div>
-          )
+          );
         })}
-        <div className='box box2'>
+        <div className="box box2">
           <button>View All Brands</button>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Catg
+export default Catg;

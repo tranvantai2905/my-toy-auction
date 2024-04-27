@@ -12,6 +12,10 @@ const BranchSchema = mongoose.Schema(
       required: true,
       trim: true,
     },
+    img: {
+      type: String,
+      trim: true,
+    },
     products: {
       type: [mongoose.Schema.Types.ObjectId],
       ref: "Product", // Reference the Product model

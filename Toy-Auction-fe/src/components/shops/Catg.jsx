@@ -2,32 +2,6 @@ import React, { useEffect, useState } from "react";
 import { getBranchesApi } from "../../api/actions/branch";
 
 const Catg = () => {
-  const data = [
-    {
-      cateImg: "./images/category/cat-1.png",
-      cateName: "Apple",
-    },
-    {
-      cateImg: "./images/category/cat-2.png",
-      cateName: "Samasung",
-    },
-    {
-      cateImg: "./images/category/cat-1.png",
-      cateName: "Oppo",
-    },
-    {
-      cateImg: "./images/category/cat-2.png",
-      cateName: "Vivo",
-    },
-    {
-      cateImg: "./images/category/cat-1.png",
-      cateName: "Redimi",
-    },
-    {
-      cateImg: "./images/category/cat-2.png",
-      cateName: "Sony",
-    },
-  ];
   const [branches, setBranches] = useState([]);
   const getBranches = async () => {
     const res = await getBranchesApi();

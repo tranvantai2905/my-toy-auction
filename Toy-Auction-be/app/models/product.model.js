@@ -21,6 +21,10 @@ const ProductSchema = mongoose.Schema(
       required: true,
       trim: true,
     },
+    branch: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Branch", // Reference the Branch model
+    },
   },
   {
     timestamps: true,

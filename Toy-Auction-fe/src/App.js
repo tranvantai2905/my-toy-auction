@@ -11,6 +11,8 @@ import NewSdata from "./components/shops/NewSdata";
 import { AuthProvider } from "./context";
 import AppRoute from "./components/approuter/AppRoute";
 import Login from "./pages/login/Login";
+import CartPage from "./pages/cart/CartPage";
+import PaymentResult from "./pages/paymentResult/PaymentResult";
 
 function App() {
   /*
@@ -98,11 +100,10 @@ function App() {
               <Login />
             </Route>
             <Route path="/cart" exact>
-              <Cart
-                CartItem={CartItem}
-                addToCart={addToCart}
-                decreaseQty={decreaseQty}
-              />
+              <CartPage />
+            </Route>
+            <Route path="/payment-result" exact>
+              <PaymentResult />
             </Route>
             {/* Private route*/}
             <AppRoute

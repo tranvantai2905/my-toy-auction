@@ -1,0 +1,48 @@
+.list-img-detail {
+  display: flex;
+}
+.img-detail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.img-asset-container {
+  padding: 50px 70px;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid #f5ebeb;
+}
+.img-detail {
+  width: 100px;
+  height: 70px;
+  padding-top: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #a59e9e;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.ant-image-mask {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 4px;
+}
+.anticon {
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: -0.125em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ant-image {
+}

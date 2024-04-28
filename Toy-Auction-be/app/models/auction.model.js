@@ -18,6 +18,10 @@ const BidSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  isPayMent: {
+    type: Boolean,
+    default: false,
+  },
   auction: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Auction",

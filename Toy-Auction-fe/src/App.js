@@ -33,7 +33,7 @@ function App() {
             <AppRoute path={"/home"} component={Pages} isPrivate={true} />
             <AppRoute path={"/cart"} component={CartPage} isPrivate={true} />
             <AppRoute
-              path={"/cart"}
+              path={"/payment-result"}
               component={PaymentResult}
               isPrivate={true}
             />

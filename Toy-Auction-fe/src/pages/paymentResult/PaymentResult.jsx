@@ -9,6 +9,7 @@ const PaymentResult = () => {
 
   const resultCode = query.get("resultCode");
   const orderIds = query.get("orderId").split(":")[0].split("::");
+  console.log(resultCode, orderIds);
   const postBidPayment = async (id) => {
     const res = await postBidPaymentAPI(id);
     console.log({ res });

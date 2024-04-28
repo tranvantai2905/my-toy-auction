@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuthState } from "../../context";
 
 const Navbar = () => {
+  const data = useAuthState();
+  const id = data.user._id;
   // Toogle Menu
   const [MobileMenu, setMobileMenu] = useState(false);
   return (

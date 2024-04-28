@@ -59,7 +59,7 @@ const ShopCart = ({ auctionItems, addToCart }) => {
     //desperate'
     addToCart(auctionItems);
 
-    history.push(`/detail/${id}`);
+    history.push(`/detail`);
   };
   return (
     <>

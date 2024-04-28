@@ -42,6 +42,7 @@ function DetailProduct() {
   };
 
   const { id } = useParams();
+
   let product = Data.productItems[0];
   // if (id <= 5) product = Data.productItems[id - 1];
   // else if (id <= 11) product = Data.ecovacs[id - 6];

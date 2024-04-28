@@ -12,6 +12,7 @@ import { AuthProvider } from "./context";
 import AppRoute from "./components/approuter/AppRoute";
 import Login from "./pages/login/Login";
 import InfoPage from "./pages/info/InfoPage";
+import Detail from "./pages/ProductDetailPage";
 
 function App() {
   /*
@@ -100,6 +101,9 @@ function App() {
             </Route>
             <Route path="/info" exact>
               <InfoPage />
+            </Route>
+            <Route path="/detail/:id" exact>
+              <Detail />
             </Route>
             <Route path="/cart" exact>
               <Cart

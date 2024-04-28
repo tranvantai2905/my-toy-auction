@@ -6,7 +6,7 @@ import theme from "../../theme";
 import { MdArrowOutward } from "react-icons/md";
 
 const primaryColor = theme.primary;
-const Shop = ({ addToCart, auctionItems }) => {
+const Shop = ({ auctionItems }) => {
   return (
     <>
       <section className="shop background">
@@ -31,7 +31,7 @@ const Shop = ({ addToCart, auctionItems }) => {
               </div>
             </div>
             <div className="product-content grid gap-5 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-              <ShopCart addToCart={addToCart} auctionItems={auctionItems} />
+              <ShopCart auctionItems={auctionItems} />
             </div>
           </div>
         </div>

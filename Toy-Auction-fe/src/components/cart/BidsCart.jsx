@@ -1,7 +1,19 @@
+import { useEffect, useState } from "react";
 import CartItem from "./CartItem";
 import PaymentSection from "./PaymentSection";
+import { getMyBids } from "../../api/actions/user";
 
 const BidsCart = () => {
+  const [bids, setBids] = useState([]);
+
+  const getMyWinnerBids = async () => {
+    const res = await getMyBids();
+    console.log({ res });
+    setBids(res);
+  };
+  useEffect(() => {
+    getMyWinnerBids();
+  }, []);
   return (
     <>
       <div>
@@ -13,11 +25,11 @@ const BidsCart = () => {
               </h1>
             </div>
 
-            <div class="mt-8">
+            <div class="mt-8 border p-2 rounded-md">
               <ul class="space-y-4">
-                <CartItem />
-                <CartItem />
-                <CartItem />
+                {bids.map((bid) => (
+                  <CartItem bid={bid} />
+                ))}
               </ul>
             </div>
           </div>

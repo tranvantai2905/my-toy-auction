@@ -5,7 +5,7 @@ import { postPaymentMomoApi } from "../../api/actions/payment";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 const PaymentSection = ({ selectedBids }) => {
-  const [selectedValue, setSelectedValue] = useState("a");
+  const [selectedValue, setSelectedValue] = useState("Memo");
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
@@ -35,13 +35,14 @@ const PaymentSection = ({ selectedBids }) => {
     const MomoUrl = res.payUrl;
     openWebsite(MomoUrl);
   };
+
   return (
     <div class="mt-8 flex justify-end border-t border-gray-100 pt-8">
-      <div class="w-screen max-w-lg space-y-4 hover:shadow-lg hover:shadow-primary-500 transition-all duration-1000 p-6 rounded-xl">
+      <div class="w-screen max-w-lg space-y-4 hover:shadow-lg hover:shadow-primary-500 transition-all duration-1000 p-6 rounded-xl  border">
         <dl class="space-y-0.5 text-sm text-gray-700">
           <div class="flex justify-between">
             <dt>Subtotal</dt>
-            <dd>{formatCurrency(Subtotal)}</dd>
+            <dd className=".flip">{formatCurrency(Subtotal)}</dd>
           </div>
 
           <div class="flex justify-between">
@@ -78,18 +79,18 @@ const PaymentSection = ({ selectedBids }) => {
 
         <div className="flex gap-3 justify-between items-center pt-10 border p-5 rounded-sm bg-slate-100 border-solid">
           <dt className="text-sm">Payment Method</dt>
-          <div className="h-20 w-20 relative">
+          <div className="h-20 w-20 relative hover:shadow-lg">
             <Radio
               sx={{
                 position: "absolute",
                 top: 1,
                 left: 1,
               }}
-              checked={selectedValue === "a"}
+              checked={selectedValue === "Memo"}
               onChange={handleChange}
-              value="a"
+              value="Memo"
               name="radio-buttons"
-              inputProps={{ "aria-label": "A" }}
+              inputProps={{ "aria-label": "Memo" }}
             />
             <img
               className="h-full w-full"
@@ -97,23 +98,23 @@ const PaymentSection = ({ selectedBids }) => {
               alt="Momo"
             />
           </div>
-          <div className="h-20 w-40 relative">
+          <div className="h-20 w-40 relative hover:shadow-lg">
             <Radio
               sx={{
                 position: "absolute",
                 top: 1,
                 left: 1,
               }}
-              checked={selectedValue === "b"}
+              checked={selectedValue === "Paypal"}
               onChange={handleChange}
-              value="b"
+              value="Paypal"
               name="radio-buttons"
-              inputProps={{ "aria-label": "B" }}
+              inputProps={{ "aria-label": "Paypal" }}
             />
             <img
               className="h-full w-full"
               src="https://th.bing.com/th/id/OIP.iPcVDe87mw9ipTIkRCb8FAHaDQ?rs=1&pid=ImgDetMain"
-              alt="Momo"
+              alt="Paypal"
             />
           </div>
         </div>

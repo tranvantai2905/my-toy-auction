@@ -9,6 +9,15 @@ async function getMyWinnerBids() {
     throw error; // Re-throw the error for proper handling
   }
 }
+async function getMyBids() {
+  try {
+    const response = await instance.get("/user/myBids");
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching auctions:", error);
+    throw error; // Re-throw the error for proper handling
+  }
+}
 
 async function postBidPayment(id) {
   try {
@@ -20,4 +29,4 @@ async function postBidPayment(id) {
   }
 }
 
-export { getMyWinnerBids, postBidPayment };
+export { getMyWinnerBids, postBidPayment, getMyBids };

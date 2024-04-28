@@ -4,7 +4,7 @@ import { FaCoins } from "react-icons/fa6";
 import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import Checkbox from "@mui/material/Checkbox";
 import { useState } from "react";
-const CartItem = ({ bid, handleChangeSelectedBids }) => {
+const CartItem = ({ bid, handleChangeSelectedBids = () => {} }) => {
   const product = bid?.auction?.product;
   const auction = bid?.auction;
 
@@ -32,19 +32,19 @@ const CartItem = ({ bid, handleChangeSelectedBids }) => {
         onClick={handleChangeSelectBox}
       >
         <img
-          src={`${product.cover[0]}`}
+          src={`${product?.cover[0]}`}
           alt=""
           class="size-16 rounded object-cover"
         />
 
         <div>
-          <h3 class="text-sm text-gray-900">{product.name}</h3>
+          <h3 class="text-sm text-gray-900">{product?.name}</h3>
 
           <dl class="mt-0.5 space-y-px text-[14px] text-gray-600 max-w-96">
             <div className="">
               <dt class="inline underline">Description: </dt>
               <dd class="inline break-words line-clamp-2">
-                {product.description}
+                {product?.description}
               </dd>
             </div>
           </dl>
@@ -64,7 +64,7 @@ const CartItem = ({ bid, handleChangeSelectedBids }) => {
                 auction?.propertyInfo?.applicationFee
               )}`}</p>
             </div>
-            {bid.isPayMent && (
+            {bid?.isPayMent && (
               <div class="flex gap-2 justify-center items-center h-8 w-fit p-2 rounded border-gray-200 bg-gray-50 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none">
                 <IoCheckmarkDoneCircleOutline color="green" />
                 <p>Paid off </p>

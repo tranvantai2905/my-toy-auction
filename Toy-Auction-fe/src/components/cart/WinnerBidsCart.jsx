@@ -42,7 +42,7 @@ const WinnerBidsCart = () => {
             </div>
 
             <div class="mt-8">
-              <ul class="space-y-4">
+              <ul class="space-y-4 border p-2 rounded-md">
                 {bids.map((bid) => (
                   <CartItem
                     bid={bid}

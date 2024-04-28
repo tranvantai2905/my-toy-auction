@@ -9,10 +9,24 @@ import Dcard from "../discount/Dcard";
 // import Compare from "../components/Compare";
 import { ToastContainer, toast } from "react-toastify";
 // import { toast } from "react-toastify";
+import postBid from "../../api/actions/postAuction";
 
 import ImageProductDetail from "./productdetail_re";
 
 function DetailProduct() {
+  const { id } = useParams();
+  const [bid, setBid] = useState("");
+
+  const handleBidChange = (event) => {
+    setBid(event.target.value);
+  };
+
+  const handleBidSubmit = () => {
+    // Here you can handle the bid submission, e.g., send the bid to the server
+    postBid(id, bid);
+    console.log(`Bid submitted: ${bid}`);
+  };
+
   function formatDate(dateString) {
     const date = new Date(dateString);
     const day = date.getDate();
@@ -40,8 +54,6 @@ function DetailProduct() {
     setStyle((current) => !current);
     setCompare((current) => !current);
   };
-
-  const { id } = useParams();
 
   let product = Data.productItems[0];
   // if (id <= 5) product = Data.productItems[id - 1];
@@ -212,44 +224,21 @@ function DetailProduct() {
               </div>
             </div>
           </div>
-          {/* <div className="btn-group">
-            <button className="btn-shopping" onClick={handleBuy}>
-              <ion-icon name="cart-outline" class="shopping-cart"></ion-icon>Mua
-              ngay
+          <div className="flex items-center">
+            <input
+              type="number"
+              value={bid}
+              onChange={handleBidChange}
+              className="border border-gray-300 rounded-l py-2 px-4 mr-2 focus:outline-none focus:border-blue-500"
+              placeholder="Số tiền bạn muốn đấu giá"
+            />
+            <button
+              onClick={handleBidSubmit}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r focus:outline-none focus:shadow-outline"
+            >
+              Bid
             </button>
-            {style === true ? (
-              ""
-            ) : (
-              <button onClick={changeStyle} className="btn-compare">
-                <ion-icon
-                  name="search-outline"
-                  class="compare-outline"
-                ></ion-icon>
-                So sánh
-              </button>
-            )}
-            {style === false ? (
-              ""
-            ) : (
-              <button className="btn-close-outline">
-                <ion-icon
-                  onClick={closeCompare}
-                  name="close"
-                  class="close-outline-pop"
-                ></ion-icon>
-              </button>
-            )}
-          </div> */}
-
-          {/* <div className="product-describe">
-          Thông tin mô tả
-          <ul>
-            <p>{product.title}</p>
-            {product.describe.map((line, index) => (
-              <li key={index}>{line}</li>
-            ))}
-          </ul>
-        </div> */}
+          </div>
         </div>
       </div>
       <div className="product_detail_below_main">

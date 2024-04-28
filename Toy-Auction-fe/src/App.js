@@ -11,6 +11,7 @@ import NewSdata from "./components/shops/NewSdata";
 import { AuthProvider } from "./context";
 import AppRoute from "./components/approuter/AppRoute";
 import Login from "./pages/login/Login";
+import InfoPage from "./pages/info/InfoPage";
 
 function App() {
   /*
@@ -96,6 +97,9 @@ function App() {
             </Route>
             <Route path="/login" exact>
               <Login />
+            </Route>
+            <Route path="/info" exact>
+              <InfoPage />
             </Route>
             <Route path="/cart" exact>
               <Cart

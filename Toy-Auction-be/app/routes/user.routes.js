@@ -34,4 +34,9 @@ module.exports = function (app) {
     [authJwt.verifyToken],
     controller.getMyWinnerBids
   );
+  app.post(
+    "/api/users/bids/:bisId/payment",
+    [authJwt.verifyToken],
+    controller.postBidPayment
+  );
 };

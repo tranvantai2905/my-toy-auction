@@ -44,6 +44,7 @@ require("./app/routes/user.routes")(app);
 require("./app/routes/product.routes")(app);
 require("./app/routes/branch.routes")(app);
 require("./app/routes/auction.routes")(app);
+require("./app/routes/payment.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

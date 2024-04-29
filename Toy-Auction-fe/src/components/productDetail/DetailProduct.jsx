@@ -53,6 +53,7 @@ function DetailProduct() {
     setDepositStartTime(res.depositTime.from);
     setDepositEndTime(res.depositTime.to);
   };
+
   useEffect(() => {
     getAuction();
   }, []);
@@ -93,7 +94,7 @@ function DetailProduct() {
   return (
     <>
       <ToastContainer />
-      <div className="product_detail_above">
+      <div className="product_detail_above flex justify-between pr-12 pb-10">
         <div className="product_detail_left">
           <div className="name-product">{product?.name}</div>
           <div className="center">
@@ -249,11 +250,11 @@ function DetailProduct() {
               disabled={!isAuctionActive(depositStartTime, depositEndTime)}
               onClick={handleBidSubmit}
               className={`py-2 px-4 rounded-r focus:outline-none focus:shadow-outline 
-    ${
-      !isAuctionActive(depositStartTime, depositEndTime)
-        ? "bg-gray-400 cursor-not-allowed"
-        : "bg-blue-500 hover:bg-blue-700 text-white font-bold"
-    }`}
+              ${
+                !isAuctionActive(depositStartTime, depositEndTime)
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-blue-500 hover:bg-blue-700 text-white font-bold"
+              }`}
             >
               Bid
             </button>
@@ -271,6 +272,28 @@ function DetailProduct() {
               </div>
             </div>
           )}
+        </div>
+        <div className="product_detail_right">
+          <div>
+            {auction?.bids.map((bid, index) => (
+              <div
+                key={index}
+                className={`border rounded-lg ${
+                  index === auction.bids.length - 1 ? "bg-green-100" : ""
+                }`}
+              >
+                <div className="flex justify-between px-4 py-2">
+                  <p className="font-bold">Bidder: {bid.bidder.username}</p>
+                  <p className="font-bold">Amount: {bid.amount}</p>
+                </div>
+                <div className="flex justify-between px-4 py-2">
+                  <p className="italic">
+                    Time: {new Date(bid.timestamp).toLocaleString()}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <div className="product_detail_below_main">

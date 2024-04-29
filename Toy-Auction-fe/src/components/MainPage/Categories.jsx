@@ -2,50 +2,26 @@ import React from "react";
 
 const Categories = () => {
   const data = [
-    // {
-    //   cateImg: "./images/category/cat1.png",
-    //   cateName: "Fashion",
-    // },
     {
       cateImg: "./images/category/cat2.png",
-      cateName: "Electronic",
+      cateName: "Điện tử",
     },
     {
       cateImg: "./images/category/cat3.png",
-      cateName: "Cars",
+      cateName: "Xe hơi",
     },
-    // {
-    //   cateImg: "./images/category/cat4.png",
-    //   cateName: "Home & Garden",
-    // },
     {
       cateImg: "./images/category/cat5.png",
-      cateName: "Gifts",
+      cateName: "Quà tặng",
     },
-    // {
-    //   cateImg: "./images/category/cat6.png",
-    //   cateName: "Music",
-    // },
     {
       cateImg: "./images/category/cat7.png",
-      cateName: "Health & Beauty",
+      cateName: "Sức khỏe & Làm đẹp",
     },
-    // {
-    //   cateImg: "./images/category/cat8.png",
-    //   cateName: "Pets",
-    // },
     {
       cateImg: "./images/category/cat9.png",
-      cateName: "Baby Toys",
+      cateName: "Đồ chơi cho bé",
     },
-    // {
-    //   cateImg: "./images/category/cat10.png",
-    //   cateName: "Groceries",
-    // },
-    // {
-    //   cateImg: "./images/category/cat11.png",
-    //   cateName: "Books",
-    // },
   ];
 
   return (

@@ -10,9 +10,9 @@ const NewArrivals = () => {
           <div className="heading d_flex">
             <div className="heading-left row  f_flex">
               <img src="https://img.icons8.com/glyph-neue/64/26e07f/new.png" />
-              <h2>Đấu giá mới cập nhât </h2>
+              <h2>Đấu giá mới cập nhật </h2>
             </div>
-            <div className="heading-right row ">
+            <div className="heading-right row flex items-center">
               <span>Xem thêm</span>
               <i className="fa-solid fa-caret-right"></i>
             </div>

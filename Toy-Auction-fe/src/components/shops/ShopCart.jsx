@@ -15,7 +15,7 @@ const ShopCart = ({ auctionItems }) => {
   };
   return (
     <>
-      {auctionItems.map((auctionItem, index) => {
+      {auctionItems?.map((auctionItem, index) => {
         return (
           <div className="group box">
             <div className="product mtop">

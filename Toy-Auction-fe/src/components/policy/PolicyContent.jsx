@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./policy.css";
 import Accordion from "react-bootstrap/Accordion";
 export default function PolicyContent() {
-  const [Policy, setPolicy] = useState('BH');
+  const [Policy, setPolicy] = useState("BH");
 
   const Insurance = () => {
     return (
@@ -311,92 +311,144 @@ export default function PolicyContent() {
       <div className="ThePolicy">
         <div className="policy-header">Chính sách bảo mật</div>
         <div className="policy-content">
-          
           <div className="heading1">
-           Chúng tôi thu thập những thông tin nào?
+            Chúng tôi thu thập những thông tin nào?
           </div>
           <p>
-          Chúng tôi thu thập thông tin từ bạn khi bạn đăng ký trên trang web của chúng tôi, đặt hàng, đăng ký nhận bản tin của chúng tôi hoặc điền vào một biểu mẫu.
+            Chúng tôi thu thập thông tin từ bạn khi bạn đăng ký trên trang web
+            của chúng tôi, đặt hàng, đăng ký nhận bản tin của chúng tôi hoặc
+            điền vào một biểu mẫu.
           </p>
-<p>
-Khi đặt hàng hoặc đăng ký trên trang web của chúng tôi, bạn có thể được yêu cầu nhập của bạn: tên, địa chỉ email hoặc địa chỉ gửi thư. Bạn có thể truy cập trang web của chúng tôi nặc danh.
-</p>
+          <p>
+            Khi đặt hàng hoặc đăng ký trên trang web của chúng tôi, bạn có thể
+            được yêu cầu nhập của bạn: tên, địa chỉ email hoặc địa chỉ gửi thư.
+            Bạn có thể truy cập trang web của chúng tôi nặc danh.
+          </p>
           <div className="heading1">
-          Chúng tôi sử dụng thông tin của bạn cho những mục đích gì?
+            Chúng tôi sử dụng thông tin của bạn cho những mục đích gì?
           </div>
           <p>
-          Bất kỳ thông tin chúng tôi thu thập từ bạn có thể được sử dụng theo một trong các cách sau đây:
+            Bất kỳ thông tin chúng tôi thu thập từ bạn có thể được sử dụng theo
+            một trong các cách sau đây:
           </p>
-<ul>
-    <li>Để cá nhân hóa trải nghiệm của bạn (thông tin của bạn sẽ giúp chúng tôi đáp ứng tốt hơn nhu cầu cá nhân của bạn).</li>
-    <li>Để cải thiện trang web của chúng tôi (chúng tôi liên tục cố gắng để cải thiện các dịch trang web của chúng tôi dựa trên những thông tin và phản hồi chúng tôi nhận được từ bạn).</li>
-    <li>Để cải thiện dịch vụ khách hàng (thông tin của bạn sẽ giúp chúng tôi để có hiệu quả hơn để đáp ứng yêu cầu dịch vụ khách hàng của bạn và nhu cầu hỗ trợ).
-</li>
-    <li>Để xử lý các giao dịch.</li>
+          <ul>
+            <li>
+              Để cá nhân hóa trải nghiệm của bạn (thông tin của bạn sẽ giúp
+              chúng tôi đáp ứng tốt hơn nhu cầu cá nhân của bạn).
+            </li>
+            <li>
+              Để cải thiện trang web của chúng tôi (chúng tôi liên tục cố gắng
+              để cải thiện các dịch trang web của chúng tôi dựa trên những thông
+              tin và phản hồi chúng tôi nhận được từ bạn).
+            </li>
+            <li>
+              Để cải thiện dịch vụ khách hàng (thông tin của bạn sẽ giúp chúng
+              tôi để có hiệu quả hơn để đáp ứng yêu cầu dịch vụ khách hàng của
+              bạn và nhu cầu hỗ trợ).
+            </li>
+            <li>Để xử lý các giao dịch.</li>
+          </ul>
+          <p>
+            Thông tin của bạn, dù công khai hay ẩn danh, sẽ không được bán, trao
+            đổi, chuyển nhượng, hoặc cho bất kỳ công ty nào khác với bất kỳ lý
+            do nào, mà không có sự đồng ý của bạn, khác hơn là cho mục đích rõ
+            ràng của việc cung cấp các sản phẩm mua hoặc dịch vụ yêu cầu.
+          </p>
 
-</ul>
-<p>Thông tin của bạn, dù công khai hay ẩn danh, sẽ không được bán, trao đổi, chuyển nhượng, hoặc cho bất kỳ công ty nào khác với bất kỳ lý do nào, mà không có sự đồng ý của bạn, khác hơn là cho mục đích rõ ràng của việc cung cấp các sản phẩm mua hoặc dịch vụ yêu cầu.</p>
-        
-<ul>
-    <li>Để quản lý một cuộc thi, khuyến mãi, khảo sát, tính năng trang web khác.</li>
-    <li>Để gửi email định kỳ.</li>
-    <li>Các địa chỉ email mà bạn cung cấp được xử lý, có thể được sử dụng để gửi cho bạn các thông tin và cập nhật liên quan đến đặt hàng của bạn, ngoài việc tiếp nhận thông tin mới từ công, cập nhật, sản phẩm hoặc dịch vụ có liên quan thường xuyên, vv…
+          <ul>
+            <li>
+              Để quản lý một cuộc thi, khuyến mãi, khảo sát, tính năng trang web
+              khác.
+            </li>
+            <li>Để gửi email định kỳ.</li>
+            <li>
+              Các địa chỉ email mà bạn cung cấp được xử lý, có thể được sử dụng
+              để gửi cho bạn các thông tin và cập nhật liên quan đến đặt hàng
+              của bạn, ngoài việc tiếp nhận thông tin mới từ công, cập nhật, sản
+              phẩm hoặc dịch vụ có liên quan thường xuyên, vv…
+            </li>
+            <li>
+              Lưu ý: Nếu bất cứ lúc nào bạn muốn hủy đăng ký bạn có thực hiện từ
+              phần hủy đăng ký nhận email trong tương lai, chúng được bố trí ở
+              dưới cùng của mỗi email.
+            </li>
+          </ul>
 
-</li>
-    <li>Lưu ý: Nếu bất cứ lúc nào bạn muốn hủy đăng ký bạn có thực hiện từ phần hủy đăng ký nhận email trong tương lai, chúng được bố trí ở dưới cùng của mỗi email.</li>
+          <div className="heading1">
+            Chúng tôi bảo vệ thông tin của bạn như thế nào?
+          </div>
+          <p>
+            Chúng tôi thực hiện một loạt các biện pháp an ninh để duy trì sự an
+            toàn của thông tin cá nhân của bạn khi bạn đặt hàng hoặc nhập, gửi,
+            hoặc truy cập thông tin cá nhân của bạn.{" "}
+          </p>
+          <p>
+            Chúng tôi cung cấp việc sử dụng một máy chủ an toàn. Tất cả các
+            thông tin nhạy cảm cung cấp được truyền qua Bảo mật (SSL) công nghệ
+            Socket và sau đó mã hóa thành cơ sở dữ liệu các nhà cung cấp cổng
+            thanh toán của chúng tôi chỉ có thể truy cập bởi những người được ủy
+            quyền có quyền truy cập đặc biệt tới hệ thống như vậy, và được yêu
+            cầu để giữ cho các thông tin bí mật.
+          </p>
 
-</ul>
-        
-          <div className="heading1">
-          Chúng tôi bảo vệ thông tin của bạn như thế nào?
-          </div>
+          <div className="heading1">Chúng tôi sử dụng cookies?</div>
           <p>
-          Chúng tôi thực hiện một loạt các biện pháp an ninh để duy trì sự an toàn của thông tin cá nhân của bạn khi bạn đặt hàng hoặc nhập, gửi, hoặc truy cập thông tin cá nhân của bạn.          </p>
-          <p>
-          Chúng tôi cung cấp việc sử dụng một máy chủ an toàn. Tất cả các thông tin nhạy cảm cung cấp được truyền qua Bảo mật (SSL) công nghệ Socket và sau đó mã hóa thành cơ sở dữ liệu các nhà cung cấp cổng thanh toán của chúng tôi chỉ có thể truy cập bởi những người được ủy quyền có quyền truy cập đặc biệt tới hệ thống như vậy, và được yêu cầu để giữ cho các thông tin bí mật.
+            Có (Cookie là những file nhỏ mà một trang web hoặc dịch vụ của nhà
+            cung cấp của nó lưu ở máy tính của bạn trong ổ cứng thông qua trình
+            duyệt Web của bạn (nếu bạn cho phép) cho phép các trang web hoặc các
+            hệ thống cung cấp dịch vụ để nhận ra trình duyệt và máy tính của bạn
+            và ghi nhớ thông tin nhất định).
           </p>
-          
-          <div className="heading1">
-          Chúng tôi sử dụng cookies?
-          </div>
           <p>
-          Có (Cookie là những file nhỏ mà một trang web hoặc dịch vụ của nhà cung cấp của nó lưu ở máy tính của bạn trong ổ cứng thông qua trình duyệt Web của bạn (nếu bạn cho phép) cho phép các trang web hoặc các hệ thống cung cấp dịch vụ để nhận ra trình duyệt và máy tính của bạn và ghi nhớ thông tin nhất định).
+            Chúng tôi sử dụng cookies để giúp chúng ta nhớ và xử lý các mặt hàng
+            trong giỏ hàng của bạn, hiểu và lưu các sở thích của bạn cho lần
+            truy cập sau và theo dõi các quảng cáo.
           </p>
-<p>
-Chúng tôi sử dụng cookies để giúp chúng ta nhớ và xử lý các mặt hàng trong giỏ hàng của bạn, hiểu và lưu các sở thích của bạn cho lần truy cập sau và theo dõi các quảng cáo.</p> 
-      
-<div className="heading1">
-Do chúng tôi tiết lộ bất cứ thông tin cho bên ngoài?
-          </div>
-          <p>
-          Chúng tôi không bán, thương mại, hoặc chuyển giao cho bên ngoài những thông tin cá nhân của bạn. Điều này không bao gồm các bên thứ ba đáng tin, người hỗ trợ chúng tôi trong việc điều hành trang web của chúng tôi, hoạt động kinh doanh của chúng tôi, hoặc phục vụ bạn, miễn là các bên đồng ý giữ bí mật thông tin này. Chúng tôi cũng có thể tiết lộ thông tin của bạn khi chúng tôi tin rằng việc này là tuân thủ pháp luật, thực thi chính sách trang web của chúng tôi, hay bảo vệ mọi người hoặc một người về quyền tài sản, hoặc sự an toàn. Tuy nhiên, thông tin không nhận dạng cá nhân có thể được cung cấp cho các bên khác để tiếp thị, quảng cáo, hoặc sử dụng khác.
-          </p>
-      
-          <div className="heading1">
-          Liên kết của bên thứ ba
-          </div>
-      <p>
-      Chúng tôi có thể cung cấp sản phẩm của bên thứ ba trên trang web của chúng tôi. Những trang web của bên thứ ba có chính sách bảo mật riêng biệt và độc lập. Do đó chúng tôi không có trách nhiệm hoặc trách nhiệm đối với các nội dung và hoạt động của các trang web liên kết. Tuy nhiên, chúng tôi tìm cách để bảo vệ sự toàn vẹn của trang web của chúng tôi và hoan nghênh bất kỳ thông tin phản hồi về các trang web này.
-      </p>
-      
-      <div className="heading1">
-      Chính sách chỉ áp dụng website trực tuyến
-          </div>
-          <p>Chính sách bảo mật trực tuyến này chỉ áp dụng cho các thông tin thu thập được thông qua trang web của chúng tôi và không cho thông tin thu thập được ẩn.
-</p>
-<div className="heading1">
-Sự đồng ý của bạn
-          </div>
-          <p>
-          Bằng cách sử dụng trang web của chúng tôi, bạn đồng ý với chính sách bảo mật của chúng tôi.
 
-          </p>
           <div className="heading1">
-          Thay đổi chính sách mật của chúng tôi
+            Do chúng tôi tiết lộ bất cứ thông tin cho bên ngoài?
           </div>
           <p>
-          Nếu chúng tôi quyết định thay đổi chính sách bảo mật của chúng tôi, chúng tôi sẽ đăng những thay đổi trên trang này.
+            Chúng tôi không bán, thương mại, hoặc chuyển giao cho bên ngoài
+            những thông tin cá nhân của bạn. Điều này không bao gồm các bên thứ
+            ba đáng tin, người hỗ trợ chúng tôi trong việc điều hành trang web
+            của chúng tôi, hoạt động kinh doanh của chúng tôi, hoặc phục vụ bạn,
+            miễn là các bên đồng ý giữ bí mật thông tin này. Chúng tôi cũng có
+            thể tiết lộ thông tin của bạn khi chúng tôi tin rằng việc này là
+            tuân thủ pháp luật, thực thi chính sách trang web của chúng tôi, hay
+            bảo vệ mọi người hoặc một người về quyền tài sản, hoặc sự an toàn.
+            Tuy nhiên, thông tin không nhận dạng cá nhân có thể được cung cấp
+            cho các bên khác để tiếp thị, quảng cáo, hoặc sử dụng khác.
+          </p>
 
+          <div className="heading1">Liên kết của bên thứ ba</div>
+          <p>
+            Chúng tôi có thể cung cấp sản phẩm của bên thứ ba trên trang web của
+            chúng tôi. Những trang web của bên thứ ba có chính sách bảo mật
+            riêng biệt và độc lập. Do đó chúng tôi không có trách nhiệm hoặc
+            trách nhiệm đối với các nội dung và hoạt động của các trang web liên
+            kết. Tuy nhiên, chúng tôi tìm cách để bảo vệ sự toàn vẹn của trang
+            web của chúng tôi và hoan nghênh bất kỳ thông tin phản hồi về các
+            trang web này.
+          </p>
+
+          <div className="heading1">
+            Chính sách chỉ áp dụng website trực tuyến
+          </div>
+          <p>
+            Chính sách bảo mật trực tuyến này chỉ áp dụng cho các thông tin thu
+            thập được thông qua trang web của chúng tôi và không cho thông tin
+            thu thập được ẩn.
+          </p>
+          <div className="heading1">Sự đồng ý của bạn</div>
+          <p>
+            Bằng cách sử dụng trang web của chúng tôi, bạn đồng ý với chính sách
+            bảo mật của chúng tôi.
+          </p>
+          <div className="heading1">Thay đổi chính sách mật của chúng tôi</div>
+          <p>
+            Nếu chúng tôi quyết định thay đổi chính sách bảo mật của chúng tôi,
+            chúng tôi sẽ đăng những thay đổi trên trang này.
           </p>
         </div>
       </div>
@@ -407,7 +459,7 @@ Sự đồng ý của bạn
     <>
       <div className="Policy-background">
         <div className="Policy-container">
-          <div className="flex-row">
+          <div className="flex">
             <div className="flex-col-1-4">
               <div className="policy-sidebar">
                 <Accordion defaultActiveKey={["1"]} alwaysOpen>
@@ -445,7 +497,7 @@ Sự đồng ý của bạn
                           onClick={() => setPolicy("DT")}
                         >
                           Chính sách đổi trả, khiếu nại
-                        </li>                   
+                        </li>
 
                         <li
                           className={Policy === "BM" ? "policy-read-item" : ""}

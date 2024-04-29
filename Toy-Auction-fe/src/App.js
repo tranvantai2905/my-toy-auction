@@ -15,6 +15,7 @@ import CartPage from "./pages/cart/CartPage";
 import PaymentResult from "./pages/paymentResult/PaymentResult";
 import { Redirect } from "react-router-dom/cjs/react-router-dom";
 import Policy from "./pages/policy/Policy";
+import InfoPage from "./pages/info/InfoPage";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route path="/policy" exact>
               <Policy />
+            </Route>
+            <Route path="/info" exact>
+              <InfoPage />
             </Route>
             {/* Private route*/}
             <AppRoute path={"/home"} component={Pages} isPrivate={true} />

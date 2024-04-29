@@ -33,7 +33,7 @@ const Navbar = () => {
                 <Link to="/user">user account</Link>
               </li>
               <li>
-                <Link to="/vendor">vendor account</Link>
+                <Link to="/info">Information</Link>
               </li>
               <li>
                 <Link to="/policy">Policy</Link>

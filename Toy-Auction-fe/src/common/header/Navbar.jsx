@@ -14,7 +14,7 @@ const Navbar = () => {
           <div className="catgrories d_flex">
             <span class="fa-solid fa-border-all"></span>
             <h4>
-              Categories <i className="fa fa-chevron-down"></i>
+              Phân loại <i className="fa fa-chevron-down"></i>
             </h4>
           </div>
 
@@ -27,19 +27,19 @@ const Navbar = () => {
             >
               {/*<ul className='link f_flex uppercase {MobileMenu ? "nav-links-MobileMenu" : "nav-links"} onClick={() => setMobileMenu(false)}'>*/}
               <li>
-                <Link to="/">home</Link>
+                <Link to="/">Trang chủ</Link>
               </li>
               <li>
-                <Link to="/user">user account</Link>
+                <Link to="/user">Cá Nhân</Link>
               </li>
               <li>
-                <Link to="/info">Information</Link>
+                <Link to="/info">Thông tin thị trường</Link>
               </li>
               <li>
-                <Link to="/policy">Policy</Link>
+                <Link to="/policy">Chính sách</Link>
               </li>
               <li>
-                <Link to="/contact">contact</Link>
+                <Link to="/contact">Kết nối</Link>
               </li>
             </ul>
 

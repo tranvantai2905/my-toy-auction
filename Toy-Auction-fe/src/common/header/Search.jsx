@@ -28,8 +28,8 @@ const Search = () => {
 
           <div className="search-box f_flex">
             <i className="fa fa-search"></i>
-            <input type="text" placeholder="Search and hit enter..." />
-            <span>All Category</span>
+            <input type="text" placeholder="Tìm kiếm và nhấn Enter..." />
+            <span>Tìm kiếm</span>
           </div>
 
           <div className="icon f_flex width items-center">

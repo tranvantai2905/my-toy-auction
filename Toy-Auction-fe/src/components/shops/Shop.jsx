@@ -2,10 +2,9 @@ import React from "react";
 import Catg from "./Catg";
 import ShopCart from "./ShopCart";
 import "./style.css";
-import theme from "../../theme";
+
 import { MdArrowOutward } from "react-icons/md";
 
-const primaryColor = theme.primary;
 const Shop = ({ auctionItems }) => {
   return (
     <>

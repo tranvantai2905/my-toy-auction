@@ -29,12 +29,12 @@ const Head = () => {
             <label> support@ui-lib.com</label>
           </div>
           <div className="right row RText flex justify-end items-center">
-            <label>Theme FAQ"s</label>
-            <label>Need Help?</label>
-            <span>🏳️‍⚧️</span>
-            <label>EN</label>
-            <span>🏳️‍⚧️</span>
-            <label>USD</label>
+            <label>Câu hỏi Thường gặp</label>
+            <label>Cần Giúp Đỡ?</label>
+            {/* <span>🏳️‍⚧️</span> */}
+            <label>VN</label>
+            {/* <span>🏳️</span> */}
+            <label>VND</label>
             {userDetails.user ? (
               <div className="flex items-center">
                 <p className="text-sm">{userDetails.user.username}</p>
@@ -42,7 +42,7 @@ const Head = () => {
                   className="text-sm hover:underline"
                   onClick={handleLogout}
                 >
-                  Logout
+                  Đăng xuất
                 </button>
               </div>
             ) : (
@@ -51,7 +51,7 @@ const Head = () => {
                   className="text-sm hover:underline"
                   onClick={handleLogin}
                 >
-                  Login
+                  Đăng nhập
                 </button>
               </div>
             )}

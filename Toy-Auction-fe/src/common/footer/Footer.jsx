@@ -9,9 +9,11 @@ const Footer = () => {
           <div className="box">
             <h1>Bonik</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-              libero id et, in gravida. Sit diam duis mauris nulla cursus. Erat
-              et lectus vel ut sollicitudin elit at amet.
+              Khám phá sự thú vị và hứng thú tại web đấu giá đồ chơi! Với sự đa
+              dạng về các sản phẩm đồ chơi phong phú, từ những món quà độc đáo
+              đến những chiếc đồ chơi phổ biến, chúng tôi mang đến cho bạn trải
+              nghiệm đấu giá độc đáo và thú vị. Khám phá ngay để tìm kiếm những
+              khoảnh khắc thú vị cùng với những chiếc đồ chơi yêu thích của bạn!
             </p>
             <div className="icon d_flex">
               <div className="img d_flex">
@@ -26,33 +28,31 @@ const Footer = () => {
           </div>
 
           <div className="box footer-item">
-            <h2>About Us</h2>
+            <h2>Về Chúng Tôi</h2>
             <ul>
-              <li>Careers</li>
-              <li>Our Stores</li>
-              <li>Our Cares</li>
-              <li>Terms & Conditions</li>
-              <li>Privacy Policy</li>
+              <li>Nghề nghiệp</li>
+              <li>Cửa hàng của chúng tôi</li>
+              <li>Chăm sóc của chúng tôi</li>
+              <li>Điều khoản & Điều kiện</li>
+              <li>Chính sách bảo mật</li>
             </ul>
           </div>
           <div className="box">
-            <h2>Customer Care</h2>
+            <h2>Chăm sóc khách hàng</h2>
             <ul>
-              <li>Help Center </li>
-              <li>How to Buy </li>
-              <li>Track Your Order </li>
-              <li>Corporate & Bulk Purchasing </li>
-              <li>Returns & Refunds </li>
+              <li>Trung tâm trợ giúp</li>
+              <li>Cách mua hàng</li>
+              <li>Theo dõi đơn hàng của bạn</li>
+              <li>Mua hàng theo số lượng lớn và doanh nghiệp</li>
+              <li>Trả hàng & Hoàn tiền</li>
             </ul>
           </div>
           <div className="box">
-            <h2>Contact Us</h2>
+            <h2>Liên Hệ</h2>
             <ul>
-              <li>
-                70 Washington Square South, New York, NY 10012, United States{" "}
-              </li>
+              <li>62, Nguyễn Văn Trỗi, Gia Lai, Việt Nam</li>
               <li>Email: uilib.help@gmail.com</li>
-              <li>Phone: +1 1123 456 780</li>
+              <li>Điện thoại: +1 1123 456 780</li>
             </ul>
           </div>
         </div>

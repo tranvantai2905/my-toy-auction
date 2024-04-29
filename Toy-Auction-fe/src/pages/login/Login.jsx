@@ -30,7 +30,7 @@ const Login = () => {
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-gray-900">
-            Login
+            Đăng nhập
           </h2>
         </div>
 
@@ -41,7 +41,7 @@ const Login = () => {
                 htmlFor="username"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Phone Number/ User Name
+                Số điện thoại/ tên đăng nhập
               </label>
               <div className="mt-2">
                 <input
@@ -62,14 +62,14 @@ const Login = () => {
                   htmlFor="password"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
-                  Password
+                  Mật khẩu
                 </label>
                 <div className="text-sm">
                   <a
                     href="/forgotPassword"
                     className="font-semibold text-indigo-600 hover:text-indigo-500"
                   >
-                    Forgot password?
+                    Quên mật khẩu?
                   </a>
                 </div>
               </div>
@@ -115,18 +115,18 @@ const Login = () => {
                     ></path>
                   </svg>
                 )}
-                Sign in
+                Đăng nhập
               </button>
             </div>
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-            Not a member?{" "}
+            Không phải thành viên?{" "}
             <a
               href="#"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
-              Sign Up
+              Đăng ký ngay
             </a>
           </p>
         </div>

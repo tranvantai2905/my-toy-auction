@@ -1,20 +1,14 @@
-async function postBid(auctionId, bidAmount) {
-    try {
-        const response = await fetch('/api/auctions/' + auctionId + '/bids', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ amount: bidAmount })
-        });
+import instance from "../instance";
 
-        if (response.ok) {
-            const data = await response.json();
-            console.log('Bid posted successfully:', data);
-        } else {
-            console.error('Failed to post bid:', response.status);
-        }
+async function postBid(auctionId, amount, bidder ) {
+    try {
+        const amountNum = Number(amount);
+        const response = await instance.post(`/auctions/${auctionId}/bids`, { bidder, amountNum });
+        return response.data;
     } catch (error) {
-        console.error('An error occurred while posting bid:', error);
+        console.error("Error posting bid:", error);
+        throw error; // Re-throw the error for proper handling
     }
 }
+
+export { postBid };

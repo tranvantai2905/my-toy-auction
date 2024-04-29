@@ -9,13 +9,15 @@ import Dcard from "../discount/Dcard";
 // import Compare from "../components/Compare";
 import { ToastContainer, toast } from "react-toastify";
 // import { toast } from "react-toastify";
-import postBid from "../../api/actions/postAuction";
+import { postBid } from '../../api/actions/postAuction';
+import { useAuthState } from "../../context";
 
 import ImageProductDetail from "./productdetail_re";
 
 function DetailProduct() {
   const { id } = useParams();
   const [bid, setBid] = useState("");
+  const userDetails = useAuthState();
 
   const handleBidChange = (event) => {
     setBid(event.target.value);
@@ -23,7 +25,7 @@ function DetailProduct() {
 
   const handleBidSubmit = () => {
     // Here you can handle the bid submission, e.g., send the bid to the server
-    postBid(id, bid);
+    postBid(id, bid, userDetails.user._id);
     console.log(`Bid submitted: ${bid}`);
   };
 

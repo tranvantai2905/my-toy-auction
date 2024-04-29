@@ -8,9 +8,7 @@ import PolicyContent from './PolicyContent';
 export default function Policy() {
     return (
         <>
-            <Header />
             <PolicyContent />
-            <Footer />
         </>
     )
 }

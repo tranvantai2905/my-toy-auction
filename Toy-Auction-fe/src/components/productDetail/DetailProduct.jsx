@@ -21,22 +21,37 @@ function DetailProduct() {
   const { id } = useParams();
   const [bid, setBid] = useState("");
   const userDetails = useAuthState();
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [depositStartTime, setDepositStartTime] = useState(null);
+  const [depositEndTime, setDepositEndTime] = useState(null);
 
   const handleBidChange = (event) => {
     setBid(event.target.value);
   };
 
-  const handleBidSubmit = () => {
-    // Here you can handle the bid submission, e.g., send the bid to the server
-    postBid(id, bid, userDetails.user._id);
-    console.log(`Bid submitted: ${bid}`);
+  const isAuctionActive = (startTime, endTime) => {
+    const now = new Date();
+    console.log({ now, startTime, endTime });
+    return now >= new Date(startTime) && now <= new Date(endTime);
+  };
+
+  const handleBidSubmit = async () => {
+    try {
+      await postBid(id, bid, userDetails.user._id);
+      console.log(`Bid submitted: ${bid}`);
+    } catch (error) {
+      setErrorMessage(`Error: ${error.message}`);
+      setIsModalVisible(true);
+    }
   };
 
   const [auction, setAuction] = useState();
   const getAuction = async () => {
     const res = await getAuctionApi(id);
-    console.log({ res });
     setAuction(res);
+    setDepositStartTime(res.depositTime.from);
+    setDepositEndTime(res.depositTime.to);
   };
   useEffect(() => {
     getAuction();
@@ -231,12 +246,31 @@ function DetailProduct() {
               placeholder="Số tiền bạn muốn đấu giá"
             />
             <button
+              disabled={!isAuctionActive(depositStartTime, depositEndTime)}
               onClick={handleBidSubmit}
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r focus:outline-none focus:shadow-outline"
+              className={`py-2 px-4 rounded-r focus:outline-none focus:shadow-outline 
+    ${
+      !isAuctionActive(depositStartTime, depositEndTime)
+        ? "bg-gray-400 cursor-not-allowed"
+        : "bg-blue-500 hover:bg-blue-700 text-white font-bold"
+    }`}
             >
               Bid
             </button>
           </div>
+          {isModalVisible && (
+            <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50">
+              <div className="bg-white p-6 rounded-lg">
+                <p className="text-red-500 mb-4">{errorMessage}</p>
+                <button
+                  onClick={() => setIsModalVisible(false)}
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <div className="product_detail_below_main">

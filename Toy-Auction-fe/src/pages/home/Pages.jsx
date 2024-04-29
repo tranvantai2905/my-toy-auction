@@ -9,7 +9,7 @@ import Annocument from "../../components/annocument/Annocument";
 import Wrapper from "../../components/wrapper/Wrapper";
 import { getAuctionsApi } from "../../api/actions/auction";
 
-const Pages = ({ addToCart }) => {
+const Pages = () => {
   const [auctions, setAuctions] = useState([]);
 
   const getAuctions = async () => {
@@ -28,7 +28,7 @@ const Pages = ({ addToCart }) => {
       {/* <TopCate /> */}
       <NewArrivals />
       {/* <Discount /> */}
-      <Shop auctionItems={auctions} addToCart={addToCart} />
+      <Shop auctionItems={auctions} />
       {/* <Annocument /> */}
       <Wrapper />
     </>

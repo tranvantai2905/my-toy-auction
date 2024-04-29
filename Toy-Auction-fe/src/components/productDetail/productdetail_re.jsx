@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./producdetail.css";
 import { Modal } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -31,6 +31,7 @@ function MyVerticallyCenteredModal(props) {
 }
 const ImageProductDetail = ({ mainImage, otherImages }) => {
   const [activeImg, setActiveImage] = useState(mainImage);
+
   const [showModal, setShowModal] = useState(false);
   const [modalShow, setModalShow] = React.useState(false);
   const handleImageClick = (image) => {
@@ -41,16 +42,17 @@ const ImageProductDetail = ({ mainImage, otherImages }) => {
   const handleCloseModal = () => {
     setShowModal(false);
   };
-
+  useEffect(() => {
+    setActiveImage(mainImage);
+  }, [mainImage]);
   return (
     <>
       <div className="img-asset-container">
-        <div className="ant-image css-f8go3t">
+        <div className="ant-image css-f8go3t max-w-72">
           <img
             src={activeImg}
             alt=""
-            className="ant-image-img css-f8go3t"
-            style={{ width: "400px", height: "400px" }}
+            className="w-full"
             onClick={() => handleImageClick(activeImg)}
           />
         </div>

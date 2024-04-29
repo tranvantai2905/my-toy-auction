@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // import labeldata from "../labeldata";
 import Data from "../Data";
@@ -9,10 +9,13 @@ import Dcard from "../discount/Dcard";
 // import Compare from "../components/Compare";
 import { ToastContainer, toast } from "react-toastify";
 // import { toast } from "react-toastify";
-import { postBid } from '../../api/actions/postAuction';
+import { postBid } from "../../api/actions/postAuction";
 import { useAuthState } from "../../context";
 
 import ImageProductDetail from "./productdetail_re";
+import { getAuctionApi } from "../../api/actions/auction";
+import formatDate from "../../utils/formatDate";
+import formatCurrency from "../../utils/formatMoney";
 
 function DetailProduct() {
   const { id } = useParams();
@@ -29,18 +32,15 @@ function DetailProduct() {
     console.log(`Bid submitted: ${bid}`);
   };
 
-  function formatDate(dateString) {
-    const date = new Date(dateString);
-    const day = date.getDate();
-    const month = date.getMonth() + 1; // Adding 1 because months are zero-indexed
-    const year = date.getFullYear();
-
-    // Pad single-digit day and month with leading zeros if necessary
-    const formattedDay = day < 10 ? `0${day}` : day;
-    const formattedMonth = month < 10 ? `0${month}` : month;
-
-    return `${formattedDay}/${formattedMonth}/${year}`;
-  }
+  const [auction, setAuction] = useState();
+  const getAuction = async () => {
+    const res = await getAuctionApi(id);
+    console.log({ res });
+    setAuction(res);
+  };
+  useEffect(() => {
+    getAuction();
+  }, []);
 
   const [style, setStyle] = useState(false);
 
@@ -57,7 +57,8 @@ function DetailProduct() {
     setCompare((current) => !current);
   };
 
-  let product = Data.productItems[0];
+  let product = auction?.product;
+
   // if (id <= 5) product = Data.productItems[id - 1];
   // else if (id <= 11) product = Data.ecovacs[id - 6];
   // else product = Data.liectroux[id - 12];
@@ -79,13 +80,12 @@ function DetailProduct() {
       <ToastContainer />
       <div className="product_detail_above">
         <div className="product_detail_left">
-          <div className="name-product">{product.name}</div>
+          <div className="name-product">{product?.name}</div>
           <div className="center">
-            {" "}
             <ImageProductDetail
-              mainImage={product.cover[0]}
-              otherImages={product.cover}
-            ></ImageProductDetail>{" "}
+              mainImage={product?.cover[0]}
+              otherImages={product?.cover}
+            ></ImageProductDetail>
           </div>
         </div>
         <div className="product_detail_right">
@@ -103,7 +103,7 @@ function DetailProduct() {
             </svg>
             <div>
               <div className="productdetail_right_title">Mã tài sản</div>
-              <div className="productdetail_right_value">{product.id}</div>
+              <div className="productdetail_right_value">{auction?._id}</div>
             </div>
           </div>
           <div className="productdetail_price">
@@ -124,7 +124,7 @@ function DetailProduct() {
                 Thời gian bắt đầu đấu giá
               </div>
               <div className="productdetail_right_value">
-                {formatDate(product.depositTime.from)}
+                {formatDate(auction?.depositTime?.from)}
               </div>
             </div>
           </div>
@@ -146,7 +146,7 @@ function DetailProduct() {
                 Thời gian dự kiến kết thúc
               </div>
               <div className="productdetail_right_value">
-                {formatDate(product.depositTime.to)}
+                {formatDate(auction?.depositTime?.to)}
               </div>
             </div>
           </div>
@@ -171,9 +171,7 @@ function DetailProduct() {
             <div>
               <div className="productdetail_right_title">Giá khởi điểm</div>
               <div className="productdetail_right_value">
-                {product.propertyInfo.startingPrice
-                  .toLocaleString("en-US")
-                  .replace(/,/g, ".")}
+                {formatCurrency(auction?.propertyInfo?.startingPrice)}
               </div>
             </div>
           </div>
@@ -198,9 +196,7 @@ function DetailProduct() {
             <div>
               <div className="productdetail_right_title">Bước giá</div>
               <div className="productdetail_right_value">
-                {product.propertyInfo.bidIncrement
-                  .toLocaleString("en-US")
-                  .replace(/,/g, ".")}
+                {formatCurrency(auction?.propertyInfo?.bidIncrement)}
               </div>
             </div>
           </div>
@@ -222,7 +218,7 @@ function DetailProduct() {
                 Phương thức đấu giá
               </div>
               <div className="productdetail_right_value">
-                {product.auctionDetails.method}
+                {auction?.auctionDetails?.method}
               </div>
             </div>
           </div>
@@ -262,11 +258,11 @@ function DetailProduct() {
           </div>
 
           <div className="produtdetail_below_detail-product">
-            <div className="name-product">{product.name}</div>
+            <div className="name-product">{product?.name}</div>
             <div className="produtdetail_below_detail-product_description">
-              {product.description.map((paragraph, index) => (
+              {/* {product?.description?.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
-              ))}
+              ))} */}
             </div>
           </div>
         </div>

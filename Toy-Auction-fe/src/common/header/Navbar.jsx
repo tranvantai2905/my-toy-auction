@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuthState } from "../../context";
 
 const Navbar = () => {
+  const data = useAuthState();
+  const id = data.user._id;
   // Toogle Menu
   const [MobileMenu, setMobileMenu] = useState(false);
   return (
@@ -27,19 +30,13 @@ const Navbar = () => {
                 <Link to="/">home</Link>
               </li>
               <li>
-                <Link to="/pages">pages</Link>
-              </li>
-              <li>
                 <Link to="/user">user account</Link>
               </li>
               <li>
-                <Link to="/vendor">vendor account</Link>
+                <Link to="/info">Information</Link>
               </li>
               <li>
-                <Link to="/track">track my order</Link>
-              </li>
-              <li>
-                <Link to="/info">info page</Link>
+                <Link to="/policy">Policy</Link>
               </li>
               <li>
                 <Link to="/contact">contact</Link>

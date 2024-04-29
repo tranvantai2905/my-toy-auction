@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuthState } from "../../context";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-const Search = ({ CartItem }) => {
+const Search = () => {
   const userDetails = useAuthState();
   const history = useHistory();
   // fixed Header
@@ -20,7 +20,7 @@ const Search = ({ CartItem }) => {
 
   return (
     <>
-      <section className="search">
+      <section className="search flex items-center">
         <div className="container c_flex">
           <div className="logo width ">
             <img src={logo} alt="" />
@@ -32,14 +32,14 @@ const Search = ({ CartItem }) => {
             <span>All Category</span>
           </div>
 
-          <div className="icon f_flex width">
+          <div className="icon f_flex width items-center">
             <button className="cursor-pointer" onClick={() => handleNavigate()}>
               <i className="fa fa-user icon-circle"></i>
             </button>
             <div className="cart">
               <Link to="/cart">
                 <i className="fa fa-shopping-bag icon-circle"></i>
-                <span>{CartItem.length === 0 ? "" : CartItem.length}</span>
+                {/* <span>{CartItem.length === 0 ? "" : CartItem.length}</span> */}
               </Link>
             </div>
           </div>

@@ -51,14 +51,11 @@ import formatCurrency from "../../utils/formatMoney";
 import checkDate from "../../utils/checkDate";
 import { useHistory } from "react-router-dom";
 
-const ShopCart = ({ auctionItems, addToCart }) => {
+const ShopCart = ({ auctionItems }) => {
   console.log({ auctionItems });
   const history = useHistory();
 
   const handleViewDetail = (id) => {
-    //desperate'
-    addToCart(auctionItems);
-
     history.push(`/detail/${id}`);
   };
   return (

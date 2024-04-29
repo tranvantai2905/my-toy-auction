@@ -1,20 +1,21 @@
 const https = require("https");
 
 const moMoPayment = async (req, res) => {
-  const { priceGlobal } = req.body;
+  const { priceGlobal, bidId } = req.body;
+  console.log({ priceGlobal }, { bidId });
   var partnerCode = "MOMO";
   var accessKey = "F8BBA842ECF85";
   var secretkey = "K951B6PE1waDMi640xX08PD3vg6EkVlz";
   // chuỗi ngẫu nhiên để phân biệt cái request
   var requestId = partnerCode + new Date().getTime() + "id";
   // mã đặt đơn
-  var orderId = new Date().getTime() + ":0123456778";
+  var orderId = bidId + `:${new Date().getTime()}`;
   //
   var orderInfo = "Thanh toán qua ví MoMo";
   // cung cấp họ về một cái pages sau khi thanh toán sẽ trở về trang nớ
-  var redirectUrl = "http://localhost:3000/";
+  var redirectUrl = "http://localhost:3000/payment-result";
   // Trang thank you
-  var ipnUrl = "http://localhost:3000/";
+  var ipnUrl = "http://localhost:3000/payment-result";
   // số tiền
   var amount = priceGlobal;
   // var requestType = "payWithATM";

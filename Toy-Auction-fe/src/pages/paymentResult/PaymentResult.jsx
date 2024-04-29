@@ -77,7 +77,7 @@ const PaymentResult = () => {
   };
   return (
     <>
-      {resultCode === "9000" ? (
+      {resultCode === "0" ? (
         renderSuccess()
       ) : resultCode === "1006" ? (
         renderFail()

@@ -23,11 +23,11 @@ const ShopCart = ({ auctionItems }) => {
                 <span className="discount opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
                   {auctionItem._id}
                 </span>
-                <img src={auctionItem.product.cover[0]} alt="" />
+                <img src={auctionItem.product?.cover[0]} alt="" />
               </div>
               <div className="product-details mt-2">
                 <h3 className="md:text-base lg:text-lg">
-                  {auctionItem.product.name}
+                  {auctionItem.product?.name}
                 </h3>
                 <div className="price mt-5">
                   <div className="flex flex-col gap-2">

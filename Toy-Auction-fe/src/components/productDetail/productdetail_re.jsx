@@ -58,15 +58,16 @@ const ImageProductDetail = ({ mainImage, otherImages }) => {
         </div>
       </div>
       <div className="list-img-detail">
-        {Object.keys(otherImages).map((key, index) => (
-          <div className="img-detail active" key={index}>
-            <img
-              src={otherImages[key]}
-              alt="image small"
-              onClick={() => handleImageClick(otherImages[key])}
-            />
-          </div>
-        ))}
+        {otherImages &&
+          Object.keys(otherImages).map((key, index) => (
+            <div className="img-detail active" key={index}>
+              <img
+                src={otherImages[key]}
+                alt="image small"
+                onClick={() => handleImageClick(otherImages[key])}
+              />
+            </div>
+          ))}
       </div>
       {/* <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>

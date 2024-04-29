@@ -64,6 +64,7 @@ const ShopCart = ({ auctionItems }) => {
         return (
           <div className="group box">
             <div className="product mtop">
+              de
               <div className="img flex justify-center border-b border-black">
                 <span className="discount opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
                   {auctionItem._id}

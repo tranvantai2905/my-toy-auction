@@ -1,7 +1,7 @@
 const https = require("https");
 
 const moMoPayment = async (req, res) => {
-  const { priceGlobal, bidId } = req.body;
+  const { bidId, priceGlobal } = req.body;
   console.log({ priceGlobal }, { bidId });
   var partnerCode = "MOMO";
   var accessKey = "F8BBA842ECF85";

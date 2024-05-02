@@ -12,5 +12,5 @@ module.exports = function (app) {
 
   app.post("/api/payment/momo", controller.moMoPayment);
   app.post("/api/payment/paypal/create", controller.createOrderPaypal)
-  app.post("/api/payment/paypal/capture/:id", controller.captureOrderPaypal)
+  app.post("/api/payment/paypal/capture", controller.captureOrderPaypal)
 };

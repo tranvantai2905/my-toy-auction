@@ -14,8 +14,15 @@ const createOrderPaypal = async (req, res) => {
           currency_code: "USD",
           value: priceGlobal,
         },
+        payee: {
+          email_address: "sb-d0dzi30576274@business.example.com"
+        }
       },
     ],
+    application_context: {
+      user_action: "PAY_NOW",
+      return_url: "http://localhost:3000/cart"
+    }
   });
   const https = require("https");
   const options = {
@@ -52,7 +59,7 @@ const createOrderPaypal = async (req, res) => {
 };
 
 const captureOrderPaypal = async (req, res) => {
-  const { id } = req.params;
+  const { id } = req.body;
 
   // Create request
   const https = require("https");

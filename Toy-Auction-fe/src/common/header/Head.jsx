@@ -64,7 +64,7 @@ const Head = () => {
                 className="text-sm hover:underline"
                 onClick={handlePolicy}
               >
-                Chính sách
+                Về chúng tôi
               </button>
             </div>
             <div>

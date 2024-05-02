@@ -5,9 +5,6 @@ function Tech() {
     <>
   <div className="news-topic">
     <div className="news-topic-name">Hướng dẫn/ Giải đáp</div>
-    <div className="readmore">
-      Xem thêm <ion-icon name="chevron-forward-outline" />
-    </div>
   </div>
   <div className="news-container">
     <div className="news-item">

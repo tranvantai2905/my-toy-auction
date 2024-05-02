@@ -33,7 +33,7 @@ async function createOrderPaypal(payload) {
 
 async function onApprovePaypal(id) {
   try {
-    const response = await instance.post(`/payment/paypal/capture/${id}`);
+    const response = await instance.post(`/payment/paypal/capture/`, {id});
     
     const orderData = await response.json();
     // Three cases to handle:
@@ -61,4 +61,4 @@ async function onApprovePaypal(id) {
   }
 }
 
-export { postPaymentMomoApi, createOrderPaypal, onApprovePaypal };
+export { postPaymentMomoApi, createOrderPaypal, onApprovePaypal};

@@ -12,7 +12,7 @@ const PaymentSection = ({ selectedBids }) => {
   };
 
   const calculateTotalAmount = (selectedBids) => {
-    return 3000 // API payment testing
+    //return 1 // API payment testing
     
     const totalAmount = selectedBids.reduce((accumulator, bid) => {
       const applicationFee = bid.auction.propertyInfo.applicationFee;
@@ -40,10 +40,12 @@ const PaymentSection = ({ selectedBids }) => {
       openWebsite(MomoUrl);
     }
     else {
-      await onApprovePaypal(await createOrderPaypal({
+      const payId = await createOrderPaypal({
         bidId: selectedBids.map((bid) => bid._id).join("::"),
         priceGlobal: Total*1000,
-      }))
+      })
+      openWebsite(`https://www.sandbox.paypal.com/checkoutnow?token=${payId}`)
+      onApprovePaypal(payId)
     }
   };
 

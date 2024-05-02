@@ -27,6 +27,7 @@ const Wrapper = () => {
   return (
     <>
       <section className="wrapper background">
+        <h1 style={{"font-size":"4em"}}>Tại sao nên chọn chúng tôi?</h1>
         <div className="container grid2">
           {data.map((val, index) => {
             return (

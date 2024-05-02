@@ -4,7 +4,7 @@ function Tech() {
     return (
     <>
   <div className="news-topic">
-    <div className="news-topic-name">Hướng dẫn giải đáp</div>
+    <div className="news-topic-name">Hướng dẫn/ Giải đáp</div>
     <div className="readmore">
       Xem thêm <ion-icon name="chevron-forward-outline" />
     </div>

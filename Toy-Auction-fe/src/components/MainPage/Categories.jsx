@@ -3,25 +3,37 @@ import React from "react";
 const Categories = () => {
   const data = [
     {
+      cateImg: "./images/category/cat1.png",
+      cateName: "Trang phục",
+    },
+    {
       cateImg: "./images/category/cat2.png",
-      cateName: "Điện tử",
+      cateName: "Đồ điện tử",
     },
     {
       cateImg: "./images/category/cat3.png",
       cateName: "Xe hơi",
     },
     {
+      cateImg: "./images/category/cat4.png",
+      cateName: "Đồ chơi",
+    },
+    {
       cateImg: "./images/category/cat5.png",
       cateName: "Quà tặng",
     },
     {
+      cateImg: "./images/category/cat6.png",
+      cateName: "Dụng cụ nghệ thuật",
+    },
+    {
       cateImg: "./images/category/cat7.png",
-      cateName: "Sức khỏe & Làm đẹp",
+      cateName: "Đồ dùng làm đẹp",
     },
     {
       cateImg: "./images/category/cat9.png",
-      cateName: "Đồ chơi cho bé",
-    },
+      cateName: "Sản phẩm cho bé",
+    }
   ];
 
   return (

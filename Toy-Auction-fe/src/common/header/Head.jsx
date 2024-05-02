@@ -62,17 +62,17 @@ const Head = () => {
             <div>
               <button
                 className="text-sm hover:underline"
-                onClick={handleInfo}
+                onClick={handlePolicy}
               >
-                Tin tức
+                Chính sách
               </button>
             </div>
             <div>
               <button
                 className="text-sm hover:underline"
-                onClick={handlePolicy}
+                onClick={handleInfo}
               >
-                Chính sách
+                Tin tức
               </button>
             </div>
             <div>

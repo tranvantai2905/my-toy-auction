@@ -13,11 +13,9 @@ const Catg = () => {
   return (
     <>
       <div className="category">
-        <div className="chead d_flex">
-          <h1 className="text-base font-bold">Nhãn Hàng </h1>
-          <h1 className="text-base font-extrabold text-primary-500">
-            Tên shop{" "}
-          </h1>
+        <div className="d_flex">
+          <h1 className="text-base font-bold">Xuất xứ</h1>
+          <h1 className="text-base font-bold">Nhãn hàng</h1>
         </div>
         {branches.map((branch, index) => {
           return (
@@ -30,9 +28,6 @@ const Catg = () => {
             </div>
           );
         })}
-        <div className="box box2 hover:bg-primary text-primary-600 hover:text-white">
-          <button>Xem các nhãn hàng</button>
-        </div>
       </div>
     </>
   );

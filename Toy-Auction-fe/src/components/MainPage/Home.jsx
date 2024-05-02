@@ -6,7 +6,7 @@ import SliderHome from "./Slider";
 const Home = () => {
   return (
     <>
-      <section className="home">
+      <section style={{"margin-bottom":"10px"}} className="home">
         <div className="container d_flex items-center">
           <Categories />
           <SliderHome />

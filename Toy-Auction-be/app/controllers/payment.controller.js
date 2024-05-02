@@ -1,4 +1,92 @@
 const https = require("https");
+const PAYPAL_CLIENT_ID = 'AdqMfHcp2J1GQuyFZ3yNUy3YxsdE_pQyHw7DSpzOKpjNncW2ubgHnhWDOuZZHIjjn_CWZ-rNxULK9GLZ';
+const PAYPAL_CLIENT_SECRET = 'EFQgt8ssPq5H16HGsADeDC2QvY6l3_YHgF14vE80i2CRcZhmvhMMqIDm_M3pcIPy0v5unmB3AXyL4JrO';
+
+const createOrderPaypal = async (req, res) => {
+  const { bidId, priceGlobal } = req.body;
+  console.log({ priceGlobal }, { bidId });
+  // Create request
+  const requestBody = JSON.stringify({
+    intent: "CAPTURE",
+    purchase_units: [
+      {
+        amount: {
+          currency_code: "USD",
+          value: priceGlobal,
+        },
+      },
+    ],
+  });
+  const https = require("https");
+  const options = {
+    hostname: "api.sandbox.paypal.com",
+    port: 443,
+    path: "/v2/checkout/orders",
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Basic " + Buffer.from(PAYPAL_CLIENT_ID + ":" + PAYPAL_CLIENT_SECRET,).toString("base64"),
+    },
+  };
+  console.log(options);
+  // Send request and get response
+  const reqq = https.request(options, (resMom) => {
+    console.log(`Status: ${resMom.statusCode}`);
+    console.log(`Headers: ${JSON.stringify(resMom.headers)}`);
+    resMom.setEncoding("utf8");
+    resMom.on("data", (body) => {
+      console.log(JSON.parse(body));
+      res.json({ id: JSON.parse(body).id })
+    });
+    resMom.on("end", () => {
+      console.log("No more data in response.");
+    });
+  });
+  reqq.on("error", (e) => {
+    console.log(`problem with request: ${e.message}`);
+  });
+  
+  console.log("Sending....");
+  reqq.write(requestBody);
+  reqq.end();
+};
+
+const captureOrderPaypal = async (req, res) => {
+  const { id } = req.params;
+
+  // Create request
+  const https = require("https");
+  const options = {
+    hostname: "api.sandbox.paypal.com",
+    port: 443,
+    path: `/v2/checkout/orders/${id}/capture`,
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Basic " + Buffer.from(PAYPAL_CLIENT_ID + ":" + PAYPAL_CLIENT_SECRET,).toString("base64"),
+    },
+  };
+  console.log(options);
+  // Send request and get response
+  const reqq = https.request(options, (resMom) => {
+    console.log(`Status: ${resMom.statusCode}`);
+    console.log(`Headers: ${JSON.stringify(resMom.headers)}`);
+    resMom.setEncoding("utf8");
+    resMom.on("data", (body) => {
+      res = JSON.parse(body);
+      console.log(res)
+    });
+    resMom.on("end", () => {
+      console.log("No more data in response.");
+    });
+  });
+  reqq.on("error", (e) => {
+    console.log(`problem with request: ${e.message}`);
+  });
+  
+  console.log("Sending....");
+  reqq.end();
+};
 
 const moMoPayment = async (req, res) => {
   const { bidId, priceGlobal } = req.body;
@@ -109,6 +197,9 @@ const moMoPayment = async (req, res) => {
   reqq.write(requestBody);
   reqq.end();
 };
+
 module.exports = {
   moMoPayment,
+  createOrderPaypal,
+  captureOrderPaypal
 };

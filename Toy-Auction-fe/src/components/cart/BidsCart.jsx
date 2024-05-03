@@ -27,7 +27,7 @@ const BidsCart = () => {
 
             <div class="mt-8 border p-2 rounded-md">
               <ul class="space-y-4">
-                {bids.map((bid) => (
+                {bids?.map((bid) => (
                   <CartItem bid={bid} />
                 ))}
               </ul>

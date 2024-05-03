@@ -4,6 +4,7 @@ import { FaCoins } from "react-icons/fa6";
 import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import Checkbox from "@mui/material/Checkbox";
 import { useState } from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 const CartItem = ({ bid, handleChangeSelectedBids = () => {} }) => {
   const product = bid?.auction?.product;
   const auction = bid?.auction;
@@ -11,16 +12,20 @@ const CartItem = ({ bid, handleChangeSelectedBids = () => {} }) => {
   const [checked, setChecked] = useState(false);
 
   const handleChangeSelectBox = () => {
-    // if (!bid.isPayMent) {
-    //   setChecked((checked) => !checked);
-    //   handleChangeSelectedBids(bid);
-    // }
-    setChecked((checked) => !checked);
-    handleChangeSelectedBids(bid);
+    if (!bid.isPayMent) {
+      setChecked((checked) => !checked);
+      handleChangeSelectedBids(bid);
+    }
+    // setChecked((checked) => !checked);
+    // handleChangeSelectedBids(bid);
   };
 
   return (
-    <div className="flex gap-1 items-center justify-between">
+    <div
+      className={`flex gap-1 items-center justify-between ${
+        bid.isPayMent ? `opacity-25` : `opacity-100`
+      }`}
+    >
       <Checkbox
         checked={checked}
         onChange={handleChangeSelectBox}
@@ -71,12 +76,15 @@ const CartItem = ({ bid, handleChangeSelectedBids = () => {} }) => {
               </div>
             )}
           </div>
-          <button class="group text-gray-600 transition hover:text-blue-700 flex gap-2 relative">
+          <Link
+            to={`detail/${auction._id}`}
+            class="group text-gray-600 transition hover:text-blue-700 flex gap-2 relative"
+          >
             <FaRegEye />
             <p className="bg-black text-blue-50 rounded-full text-xs group-hover:opacity-100 opacity-0 absolute top-10 left-[-20px] p-1 w-[150px] transition-opacity duration-1000">
               View Auction Detail
             </p>
-          </button>
+          </Link>
 
           <button class="text-gray-600 transition hover:text-red-600">
             <span class="sr-only">Remove item</span>

@@ -16,8 +16,7 @@ const PaymentResult = () => {
   };
   useEffect(() => {
     console.log({ orderIds });
-    if (resultCode === "9000")
-      orderIds.map((orderId) => postBidPayment(orderId));
+    if (resultCode === "0") orderIds.map((orderId) => postBidPayment(orderId));
   }, [orderIds, resultCode]);
   const renderSuccess = () => {
     return (

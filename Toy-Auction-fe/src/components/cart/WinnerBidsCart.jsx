@@ -37,7 +37,7 @@ const WinnerBidsCart = () => {
           <div class="mx-auto max-w-4xl">
             <div class="text-center">
               <h1 class="text-xl font-bold text-gray-900 sm:text-3xl">
-                Winner Bids
+                Những xe đã trúng đấu giá
               </h1>
             </div>
 

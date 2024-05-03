@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-const Tabs = ["My bid", "My winner bid"];
+const Tabs = ["Xe đang đấu giá", "Xe đã trúng đấu giá"];
 const CartTab = ({ state, handleChangeTab }) => {
   return (
     <div class="hidden sm:block">

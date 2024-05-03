@@ -16,14 +16,14 @@ const Shop = ({ auctionItems }) => {
             <div className="heading d_flex py-10">
               <div className="heading-left flex flex-col gap-2">
                 <p className="font-medium text-3xl">
-                  Tài sản đang được đấu giá
+                  Xe đang được đấu giá
                 </p>
               </div>
               <div className="heading-right row">
                 <button
                   className={`flex justify-center items-center gap-4 bg-primary text-white`}
                 >
-                  <p className="text-base font-bold">Xem toàn bộ tài sản</p>
+                  <p className="text-base font-bold">Xem toàn bộ xe</p>
                   <MdArrowOutward />
                 </button>
               </div>

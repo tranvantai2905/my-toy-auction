@@ -279,7 +279,7 @@ function DetailProduct() {
         </div>
         <div className="product_detail_right">
           <div>
-            {auction?.bids.map((bid, index) => (
+            {auction?.bids.slice(0,4).map((bid, index) => (
               <div
                 key={index}
                 className={`border rounded-lg ${
@@ -287,14 +287,14 @@ function DetailProduct() {
                 }`}
               >
                 <div className="flex justify-between px-4 py-2">
-                  <p className="font-bold">Bidder: {bid.bidder.username}</p>
+                  <p className="font-bold">Người ra giá: {bid.bidder.username}</p>
                   <p className="font-bold">
-                    Amount: {formatCurrency(bid.amount)}
+                    Số tiền: {formatCurrency(bid.amount)}
                   </p>
                 </div>
                 <div className="flex justify-between px-4 py-2">
                   <p className="italic">
-                    Time: {formatDate(new Date(bid.timestamp).toLocaleString())}
+                    Thời gian: {formatDate(new Date(bid.timestamp).toLocaleString())}
                   </p>
                 </div>
               </div>

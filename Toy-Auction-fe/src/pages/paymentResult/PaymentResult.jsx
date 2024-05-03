@@ -8,7 +8,9 @@ const PaymentResult = () => {
   const query = useQuery();
 
   const resultCode = query.get("resultCode");
-  const orderIds = query.get("orderId").split(":")[0].split("::");
+  const arr = query.get("orderId").split(":");
+  //remove temp tail
+  const orderIds = arr.slice(0, arr.length - 1);
   console.log(resultCode, orderIds);
   const postBidPayment = async (id) => {
     const res = await postBidPaymentAPI(id);

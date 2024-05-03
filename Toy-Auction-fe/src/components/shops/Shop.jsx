@@ -26,9 +26,9 @@ const Shop = ({ auctionItems }) => {
                 </button>
               </div>
             </div>
-            <div className="product-content grid gap-5 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+            <div className="product-content grid gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <ShopCart auctionItems={auctionItems} />
-            </div>
+            </div>  
           </div>
         </div>
       </section>

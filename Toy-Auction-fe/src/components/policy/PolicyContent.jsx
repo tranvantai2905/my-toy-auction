@@ -10,9 +10,9 @@ export default function PolicyContent() {
         <div className="policy-header">Chính sách bảo hành</div>
         <div className="policy-content">
           <div className="heading1">Điều kiện bảo hành</div>
-          <div className="text-strong">
-            (BK Robotic chỉ hỗ trợ bảo hành sản phẩm hư hỏng trong điều kiện sử
-            dụng bình thường theo tiêu chuẩn của nhà sản xuất){" "}
+          <div className="text-strong italic text-[13px] my-2 text-center">
+            BK Robotic chỉ hỗ trợ bảo hành sản phẩm hư hỏng trong điều kiện sử
+            dụng bình thường theo tiêu chuẩn của nhà sản xuất
           </div>
 
           <div className="text-strong">Tháng 1</div>
@@ -468,7 +468,7 @@ export default function PolicyContent() {
                     <Accordion.Body></Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1">
-                    <Accordion.Header>Các Chính sách</Accordion.Header>
+                    <Accordion.Header>Các chính sách</Accordion.Header>
                     <Accordion.Body>
                       <ul>
                         <li

@@ -25,8 +25,8 @@
 }
 
 .accordion * {
-  background-color: #1866e4;
-  color: #fff;
+  background-color: #0F3460;
+  color: #FFFFFF;
 }
 
 .accordion {
@@ -50,12 +50,18 @@
 .policy-sidebar li {
   padding: 10px 0 10px 20px;
   width: 100%;
-  background-color: #5e98f4;
+  background-color: #5D6EC7;
+  transition: all ease-in-out 1;
   cursor: pointer;
 }
 
+.policy-sidebar li:hover:not(.policy-read-item) {
+  background-color:  #A6B1E1 !important;
+}
+
 .policy-read-item {
-  background-color: #3b82f6 !important;
+  background-color:  #535C91 !important;
+  color: #FFFFFF;
 }
 
 .ThePolicy {
@@ -76,8 +82,8 @@
 .ThePolicy .heading1 {
   text-transform: uppercase;
   font-weight: bold;
-  padding: 10px;
-  color: #307fe2;
+  color: #0F3460;
+  font-size: 20px;
 }
 .policy-content {
   margin: 10px;

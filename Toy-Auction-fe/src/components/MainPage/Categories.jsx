@@ -33,18 +33,24 @@ const Categories = () => {
     {
       cateImg: "./images/category/cat9.png",
       cateName: "Sản phẩm cho bé",
-    }
+    },
   ];
+
+  const topData = data.slice(0, 3);
 
   return (
     <>
       <div className="category">
-        {data.map((value, index) => {
+        <div className="f_flex mx-[15px] my-0 px-[5px] py-[10px] gap-4 items-center">
+          <img src="./images/category/cat12.png" alt="" />
+          <input type="search" name="search" id="search" className="w-full h-[20px] border border-solid"/>
+        </div>
+        {topData.map((value, index) => {
           return (
             <div className="box f_flex" key={index}>
               <img src={value.cateImg} alt="" />
               <span>{value.cateName}</span>
-            </div>
+            </div>  
           );
         })}
       </div>

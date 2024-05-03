@@ -15,10 +15,7 @@ const Shop = ({ auctionItems }) => {
           <div className="contentWidth">
             <div className="heading d_flex py-10">
               <div className="heading-left flex flex-col gap-2">
-                <p className={`text-primary-500 text-base font-medium`}>
-                  Tài sản đấu giá
-                </p>
-                <p className="font-medium text-3xl">Tài sản sắp được đấu giá</p>
+                <p className="font-medium text-3xl">Tài sản đang được đấu giá</p>
               </div>
               <div className="heading-right row">
                 <button

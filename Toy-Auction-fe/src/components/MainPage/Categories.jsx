@@ -3,12 +3,20 @@ import React from "react";
 const Categories = () => {
   const data = [
     {
+      cateImg: "./images/category/cat1.png",
+      cateName: "Trang phục",
+    },
+    {
       cateImg: "./images/category/cat2.png",
-      cateName: "Điện tử",
+      cateName: "Đồ điện tử",
     },
     {
       cateImg: "./images/category/cat3.png",
       cateName: "Xe hơi",
+    },
+    {
+      cateImg: "./images/category/cat4.png",
+      cateName: "Đồ chơi",
     },
     {
       cateImg: "./images/category/cat5.png",

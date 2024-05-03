@@ -1,16 +1,16 @@
-import Tech2 from "../../components/info/Tech2";
+import Tech from "../../components/info/Tech";
 import "../../components/info/news.css";
 
-const InfoPage = () => {
+const QuestionsPage = () => {
   return (
     <>
       <div className="content">
         <div id="tech">
-          <Tech2 />
+          <Tech />
         </div>
       </div>
     </>
   );
 };
 
-export default InfoPage;
+export default QuestionsPage;

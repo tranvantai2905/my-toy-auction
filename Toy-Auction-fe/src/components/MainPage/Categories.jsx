@@ -14,19 +14,15 @@ const Categories = () => {
       cateImg: "./images/category/cat5.png",
       cateName: "Quà tặng",
     },
-    {
-      cateImg: "./images/category/cat7.png",
-      cateName: "Sức khỏe & Làm đẹp",
-    },
-    {
-      cateImg: "./images/category/cat9.png",
-      cateName: "Đồ chơi cho bé",
-    },
   ];
 
   return (
     <>
       <div className="category">
+        <div className="f_flex mx-[15px] my-0 px-[5px] py-[10px] gap-4 items-center">
+          <img src="./images/category/cat12.png" alt="" />
+          <input type="search" name="search" id="search" className="w-full h-[20px] border border-solid"/>
+        </div>
         {data.map((value, index) => {
           return (
             <div className="box f_flex" key={index}>

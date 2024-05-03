@@ -54,6 +54,7 @@ function DetailProduct() {
     setAuction(res);
     setDepositStartTime(res.depositTime.from);
     setDepositEndTime(res.depositTime.to);
+    setBid(res.propertyInfo.startingPrice);
   };
 
   useEffect(() => {
@@ -244,6 +245,7 @@ function DetailProduct() {
             <input
               type="number"
               value={bid}
+              step={auction?.propertyInfo?.bidIncrement}
               onChange={handleBidChange}
               className="border border-gray-300 rounded-l py-2 px-4 mr-2 focus:outline-none focus:border-blue-500"
               placeholder="Số tiền bạn muốn đấu giá"
@@ -286,11 +288,13 @@ function DetailProduct() {
               >
                 <div className="flex justify-between px-4 py-2">
                   <p className="font-bold">Bidder: {bid.bidder.username}</p>
-                  <p className="font-bold">Amount: {bid.amount}</p>
+                  <p className="font-bold">
+                    Amount: {formatCurrency(bid.amount)}
+                  </p>
                 </div>
                 <div className="flex justify-between px-4 py-2">
                   <p className="italic">
-                    Time: {new Date(bid.timestamp).toLocaleString()}
+                    Time: {formatDate(new Date(bid.timestamp).toLocaleString())}
                   </p>
                 </div>
               </div>

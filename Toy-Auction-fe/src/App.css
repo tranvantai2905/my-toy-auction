@@ -17,6 +17,11 @@ body {
   font-family: "Inter", sans-serif;
   background-color: #ffffff;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 .background {
   background: #f6f9fc;
   padding: 50px 0;

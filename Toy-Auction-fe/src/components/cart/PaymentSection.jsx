@@ -36,7 +36,7 @@ const PaymentSection = ({ selectedBids }) => {
     if (Total === 0) return;
     else if (selectedValue === "Memo") {
       const res = await postPaymentMomoApi({
-        bidId: selectedBids.map((bid) => bid._id).join("::"),
+        bidId: selectedBids.map((bid) => bid._id).join(":"),
         priceGlobal: Total,
       });
       console.log({ res });

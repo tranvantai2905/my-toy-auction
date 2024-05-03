@@ -643,6 +643,7 @@ width: 33%;
   width: 66%;
   }
 .text-strong{
+  font-size: 10px;
   font-weight: bolder;
   padding:10px;
 }  

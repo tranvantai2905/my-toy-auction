@@ -9,7 +9,7 @@ export default function PolicyContent() {
       <div className="ThePolicy">
         <div className="policy-header">Chính sách bảo hành</div>
         <div className="policy-content">
-          <div className="text-strong">
+          <div className="text-strong italic text-[13px] my-2 text-center">
             Chính sách bảo hành này sẽ giúp đảm bảo quyền lợi của cả người mua và người bán trên hệ thống đấu giá mô hình Diecast, 
             tạo ra một môi trường mua bán trực tuyến tin cậy và công bằng.
           </div>
@@ -437,7 +437,7 @@ export default function PolicyContent() {
                     <Accordion.Body></Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1">
-                    <Accordion.Header>Các Chính sách</Accordion.Header>
+                    <Accordion.Header>Các chính sách</Accordion.Header>
                     <Accordion.Body>
                       <ul>
                         <li

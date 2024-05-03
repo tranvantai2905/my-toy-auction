@@ -6,10 +6,7 @@ function Tech3() {
         <div id="Tech3">
 
   <div className="news-topic">
-    <div className="news-topic-name">Đánh giá</div>
-    <div className="readmore">
-      Xem thêm <ion-icon name="chevron-forward-outline" />
-    </div>
+    <div className="news-topic-name">Chương trình khuyến mãi</div>
   </div>
   <div className="news-container">
     <div className="news-item">

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Home from "../../components/MainPage/Home";
 // import FlashDeals from "../../components/flashDeals/FlashDeals";
 // import TopCate from "../../components/top/TopCate";
-import NewArrivals from "../../components/newarrivals/NewArrivals";
+import DesiredAunction from "../../components/newarrivals/NewArrivals";
 // import Discount from "../../components/discount/Discount";
 import Shop from "../../components/shops/Shop";
 // import Annocument from "../../components/annocument/Annocument";
@@ -26,7 +26,7 @@ const Pages = () => {
       <Home />
       {/* <FlashDeals productItems={productItems} addToCart={addToCart} /> */}
       {/* <TopCate /> */}
-      <NewArrivals />
+      <DesiredAunction />
       {/* <Discount /> */}
       <Shop auctionItems={auctions} />
       {/* <Annocument /> */}

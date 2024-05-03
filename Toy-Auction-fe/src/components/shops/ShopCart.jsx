@@ -23,10 +23,14 @@ const ShopCart = ({ auctionItems }) => {
                 <span className="discount opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
                   {auctionItem._id}
                 </span>
-                <img src={auctionItem.product?.cover[0]} alt="" />
+                <img
+                  className=" overflow-hidden"
+                  src={auctionItem.product?.cover[0]}
+                  alt=""
+                />
               </div>
               <div className="product-details mt-2">
-                <h3 className="md:text-base lg:text-lg">
+                <h3 className="md:text-base lg:text-lg h-15 truncate ">
                   {auctionItem.product?.name}
                 </h3>
                 <div className="price mt-5">

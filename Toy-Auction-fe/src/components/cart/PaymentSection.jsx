@@ -1,7 +1,11 @@
 import { useState } from "react";
 import formatCurrency from "../../utils/formatMoney";
 import Radio from "@mui/material/Radio";
-import { createOrderPaypal, onApprovePaypal, postPaymentMomoApi } from "../../api/actions/payment";
+import {
+  createOrderPaypal,
+  onApprovePaypal,
+  postPaymentMomoApi,
+} from "../../api/actions/payment";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 const PaymentSection = ({ selectedBids }) => {
@@ -13,12 +17,12 @@ const PaymentSection = ({ selectedBids }) => {
 
   const calculateTotalAmount = (selectedBids) => {
     //return 1 // API payment testing
-    
+
     const totalAmount = selectedBids.reduce((accumulator, bid) => {
       const applicationFee = bid.auction.propertyInfo.applicationFee;
       return accumulator + bid.amount + applicationFee;
     }, 0);
-    
+
     return totalAmount;
   };
   const Subtotal = calculateTotalAmount(selectedBids);
@@ -30,22 +34,21 @@ const PaymentSection = ({ selectedBids }) => {
 
   const handlePayment = async () => {
     if (Total === 0) return;
-    else if (selectedValue==="Memo") {
+    else if (selectedValue === "Memo") {
       const res = await postPaymentMomoApi({
-        bidId: selectedBids.map((bid) => bid._id).join("::"),
-        priceGlobal: Total*1000,
+        bidId: selectedBids.map((bid) => bid._id).join(":"),
+        priceGlobal: Total,
       });
       console.log({ res });
       const MomoUrl = res.payUrl;
       openWebsite(MomoUrl);
-    }
-    else {
+    } else {
       const payId = await createOrderPaypal({
         bidId: selectedBids.map((bid) => bid._id).join("::"),
-        priceGlobal: Total*1000,
-      })
-      openWebsite(`https://www.sandbox.paypal.com/checkoutnow?token=${payId}`)
-      onApprovePaypal(payId)
+        priceGlobal: Total,
+      });
+      openWebsite(`https://www.sandbox.paypal.com/checkoutnow?token=${payId}`);
+      onApprovePaypal(payId);
     }
   };
 

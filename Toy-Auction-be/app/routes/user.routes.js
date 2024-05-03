@@ -35,7 +35,7 @@ module.exports = function (app) {
     controller.getMyWinnerBids
   );
   app.post(
-    "/api/users/bids/:bisId/payment",
+    "/api/users/bids/:bidId/payment",
     [authJwt.verifyToken],
     controller.postBidPayment
   );

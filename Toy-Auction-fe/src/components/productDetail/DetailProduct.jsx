@@ -25,6 +25,7 @@ function DetailProduct() {
   const [errorMessage, setErrorMessage] = useState("");
   const [depositStartTime, setDepositStartTime] = useState(null);
   const [depositEndTime, setDepositEndTime] = useState(null);
+  const [needRefesh, setNeedFresh] = useState(0);
 
   const handleBidChange = (event) => {
     setBid(event.target.value);
@@ -40,6 +41,7 @@ function DetailProduct() {
     try {
       await postBid(id, bid, userDetails.user._id);
       console.log(`Bid submitted: ${bid}`);
+      setNeedFresh((pr) => pr + 1);
     } catch (error) {
       setErrorMessage(`Error: ${error.message}`);
       setIsModalVisible(true);
@@ -52,11 +54,12 @@ function DetailProduct() {
     setAuction(res);
     setDepositStartTime(res.depositTime.from);
     setDepositEndTime(res.depositTime.to);
+    setBid(res.propertyInfo.startingPrice);
   };
 
   useEffect(() => {
     getAuction();
-  }, []);
+  }, [needRefesh]);
 
   const [style, setStyle] = useState(false);
 
@@ -242,6 +245,7 @@ function DetailProduct() {
             <input
               type="number"
               value={bid}
+              step={auction?.propertyInfo?.bidIncrement}
               onChange={handleBidChange}
               className="border border-gray-300 rounded-l py-2 px-4 mr-2 focus:outline-none focus:border-blue-500"
               placeholder="Số tiền bạn muốn đấu giá"
@@ -250,10 +254,11 @@ function DetailProduct() {
               disabled={!isAuctionActive(depositStartTime, depositEndTime)}
               onClick={handleBidSubmit}
               className={`py-2 px-4 rounded-r focus:outline-none focus:shadow-outline 
-              ${!isAuctionActive(depositStartTime, depositEndTime)
+              ${
+                !isAuctionActive(depositStartTime, depositEndTime)
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-blue-500 hover:bg-blue-700 text-white font-bold"
-                }`}
+              }`}
             >
               Bid
             </button>
@@ -277,16 +282,19 @@ function DetailProduct() {
             {auction?.bids.map((bid, index) => (
               <div
                 key={index}
-                className={`border rounded-lg ${index === auction.bids.length - 1 ? "bg-green-100" : ""
-                  }`}
+                className={`border rounded-lg ${
+                  index === auction.bids.length - 1 ? "bg-green-100" : ""
+                }`}
               >
                 <div className="flex justify-between px-4 py-2">
                   <p className="font-bold">Bidder: {bid.bidder.username}</p>
-                  <p className="font-bold">Amount: {bid.amount}</p>
+                  <p className="font-bold">
+                    Amount: {formatCurrency(bid.amount)}
+                  </p>
                 </div>
                 <div className="flex justify-between px-4 py-2">
                   <p className="italic">
-                    Time: {new Date(bid.timestamp).toLocaleString()}
+                    Time: {formatDate(new Date(bid.timestamp).toLocaleString())}
                   </p>
                 </div>
               </div>

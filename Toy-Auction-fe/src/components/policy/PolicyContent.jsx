@@ -9,70 +9,61 @@ export default function PolicyContent() {
       <div className="ThePolicy">
         <div className="policy-header">Chính sách bảo hành</div>
         <div className="policy-content">
-          <div className="heading1">Điều kiện bảo hành</div>
           <div className="text-strong italic text-[13px] my-2 text-center">
-            BK Robotic chỉ hỗ trợ bảo hành sản phẩm hư hỏng trong điều kiện sử
-            dụng bình thường theo tiêu chuẩn của nhà sản xuất
+            Chính sách bảo hành này sẽ giúp đảm bảo quyền lợi của cả người mua và người bán trên hệ thống đấu giá mô hình Diecast, 
+            tạo ra một môi trường mua bán trực tuyến tin cậy và công bằng.
           </div>
+          <div className="heading1">Điều kiện bảo hành</div>
 
-          <div className="text-strong">Tháng 1</div>
+          <div className="text-strong">Thời gian bảo hành:</div>
           <ul>
             <li>
-              1 đổi 1 tại nhà, nếu hết hàng đổi máy khác BK Robotic trả lại tiền
-              chênh lệch nếu có.
+              Mỗi sản phẩm đấu giá trên hệ thống sẽ đi kèm với một thời gian bảo hành cụ thể, 
+              được quy định bởi người bán. Thời gian bảo hành này sẽ được hiển thị rõ ràng trong thông tin sản phẩm.
             </li>
-            <li>Hoặc trả máy thì nhận lại tiền 80% giá trị máy.</li>
-            <li>Khách hàng phải giữ nguyên vỏ hộp và phụ kiện đi kèm.</li>
-          </ul>
-
-          <div className="text-strong">Tháng 2 – 12</div>
-          <ul>
             <li>
-              BK Robotic hỗ trợ bảo hành theo tiêu chuẩn hãng hoặc chuyển hãng
-              bảo hành khi cần.
+            Thời gian bảo hành tính từ ngày món hàng được nhận bởi người mua, được xác nhận qua quá trình quay phim và kiểm tra theo quy định của hệ thống.
             </li>
           </ul>
 
-          <div className="text-strong">Tháng 2 – 12</div>
+          <div className="text-strong">Điều kiện bảo hành:</div>
           <ul>
             <li>
-              Không đổi trả, BK Robotic hỗ trợ bảo hành theo tiêu chuẩn hãng
-              hoặc chuyển hãng bảo hành khi cần.
+              Sản phẩm phải được sử dụng đúng cách và theo hướng dẫn sử dụng của nhà sản xuất.
             </li>
-            <li>Sản phẩm không lỗi Không đổi trả.</li>
             <li>
-              Sản phẩm lỗi do người dùng Không bảo hành đổi trả. BK Robotic hỗ
-              trợ chuyển hãng bảo hành, khách hàng chịu phí sửa chữa.
+              Sản phẩm không được phép sửa chữa, thay đổi cấu trúc hoặc mở ra nếu không có sự đồng ý của nhà sản xuất hoặc đại diện ủy quyền.
+            </li>
+            <li>
+              Bảo hành chỉ áp dụng cho các lỗi kỹ thuật, hỏng hóc do sản phẩm trong quá trình sử dụng bình thường và không phải do hỏng hóc do người dùng gây ra.
+            </li>
+            <li>
+              Sản phẩm phải được bảo quản và vận chuyển đúng cách để tránh các vấn đề gây hỏng hóc không phải do lỗi của sản phẩm.
+            </li>
+          </ul>
+
+          <div className="text-strong">Quy trình yêu cầu bảo hành:</div>
+          <ul>
+            <li>
+              Khách hàng phải thông báo về bất kỳ vấn đề bảo hành nào qua hệ thống trước khi hết thời gian bảo hành.
+            </li>
+            <li>
+              Sau khi nhận được thông báo, hệ thống sẽ kiểm tra thông tin và tiến hành xác nhận vấn đề bảo hành.
+            </li>
+            <li>
+              Nếu vấn đề được xác nhận là có thể bảo hành, hệ thống sẽ hướng dẫn khách hàng về quy trình trả hàng và cung cấp thông tin cần thiết cho việc xử lý bảo hành.
             </li>
           </ul>
 
           <div className="heading1">Những trường hợp không được bảo hành</div>
           <ul>
-            <li> Khách hàng tự động tháo máy.</li>
-            <li> Sử dụng sai tiêu chuẩn của nhà sản xuất.</li>
+            <li> Các trường hợp sản phẩm bị hỏng do sử dụng không đúng cách hoặc vi phạm hướng dẫn sử dụng của nhà sản xuất sẽ không được bảo hành.</li>
+            <li> Mọi sửa chữa hoặc thay đổi cấu trúc sản phẩm mà không có sự đồng ý của nhà sản xuất hoặc đại diện ủy quyền sẽ không được bảo hành.</li>
             <li>
-              {" "}
-              Sử dụng sai điện áp quy định, quá công suất của thiết bị hoặc cháy
-              nổ, rơi vỡ, va đập, hỏng hóc vật lý.
+              Các trường hợp hỏng hóc do nguyên nhân ngoại lệ như tai nạn, thảm họa tự nhiên, hoặc vận chuyển không đúng cách không được bảo hành.
             </li>
             <li>
-              {" "}
-              Các lỗi do người dùng để cạn pin và không sạc trong thời gian dài
-              dẫn đến máy không thể sạc được. Hoàng Kiên sẽ hỗ trợ chi phí thay
-              pin giá hợp lý nhất cho các bạn.
-            </li>
-            <li>
-              Hư hỏng do thiên tai, hỏa hoạn, động vật, côn trùng hoặc con người
-              làm hỏng.
-            </li>
-            <li>
-              Hư hỏng do khách hàng thay đổi ROM hoặc can thiệp đến hệ điều hành
-              máy;
-            </li>
-            <li>Quá thời hạn bảo hành ghi trên phiếu bảo hành.</li>
-            <li>
-              Không có phiếu bảo hành, phiếu bảo hành không đúng hoặc phiếu bảo
-              hành bị tẩy xóa, không nguyên vẹn.
+              Sản phẩm phải được trả về trong tình trạng hoàn chỉnh, bao gồm cả phụ kiện và bao bì gốc, nếu không sẽ không được bảo hành.
             </li>
           </ul>
 
@@ -88,50 +79,59 @@ export default function PolicyContent() {
         <div className="policy-header">Chính sách vận chuyển</div>
         <div className="policy-content">
           <div className="text-strong">
-            BK Robotic có dịch vụ vận chuyển uy tín, đảm bảo các mặt hàng đến
+            Dịch vụ vận chuyển uy tín, đảm bảo các mặt hàng đến
             tay quý khách được an toàn.
           </div>
           <div className="heading1">
-            Cách 1: Giao hàng trực tiếp tại cửa hàng
+            Lựa Chọn Dịch Vụ Vận Chuyển
           </div>
           <p>
-            Hãy trực tiếp đến địa chỉ các showroom của BK Robotic để lựa chọn
-            sản phẩm, thanh toán và nhận sản phẩm trực tiếp tại cửa hàng.
+            Người bán và người mua đều có quyền lựa chọn dịch vụ vận chuyển phù hợp.
+          </p>
+          <p>
+          Hệ thống không có dịch vụ vận chuyển riêng, mà sẽ hỗ trợ việc gửi hàng thông qua các dịch vụ vận chuyển bên thứ ba được lựa chọn bởi người gửi hàng.
           </p>
 
           <div className="heading1">
-            Cách 2: Giao hàng miễn phí nội thành TP Hồ Chí Minh
+            Trách Nhiệm của Người Bán
           </div>
           <p>
-            Nếu bạn không muốn trực tiếp đến cửa hàng. BK Robotic sẵn sàng giao
-            hàng miễn phí trong các quận nội thành Thành phố Hồ Chí Minh . Xin
-            vui lòng gọi số hotline để đặt hàng và nhận sản phẩm tại địa chỉ bạn
-            mong muốn.
+            Người bán có trách nhiệm chọn lựa và sử dụng dịch vụ vận chuyển tin cậy để gửi sản phẩm cho người mua.
+          </p>
+          <p>
+            Người bán phải đảm bảo rằng sản phẩm được đóng gói cẩn thận và an toàn để tránh hỏng hóc hoặc mất mát trong quá trình vận chuyển.
           </p>
 
           <div className="heading1">
-            Cách 3: Sử dụng hình thức Giao hàng thu tiền – COD (Cash on
-            Delivery)
+            Trách Nhiệm của Người Mua
           </div>
           <p>
-            Đối với các bạn ở xa Tp Hồ Chí Minh, muốn sử dụng hình thức COD
-            (thanh toán khi nhận hàng), các bạn vui lòng liên hệ với BK Robotic
-            để được hướng dẫn. Đây là hình thức thanh toán COD (Cash on
-            Delivery) – Các bạn sẽ thanh toán trực tiếp cho bên chuyển phát sau
-            khi đã nhận được hàng. Với hình thức này, để đảm bảo đơn hàng được
-            xác nhận, BK Robotic có 2 hình thức mua hàng và thanh toán như sau:
+            Người mua cần cung cấp địa chỉ giao hàng chính xác và chi tiết để đảm bảo việc nhận hàng được thực hiện một cách chính xác và kịp thời.
           </p>
-          <ul>
-            <li>
-              Một là, chuyển khoản đặt cọc trước từ 200.000 – 500.000 VNĐ. Khi
-              nhận được hàng khách hàng sẽ thanh toán nốt số tiền còn lại và
-              tiền cước vận chuyển.
-            </li>
-            <li>
-              Hai là, Chuyển khoản toàn bộ 100% tiền hàng. Bạn sẽ được BK
-              Robotic hỗ trợ cước phí vận chuyển tùy thuộc vào giá trị đơn hàng.
-            </li>
-          </ul>
+          <p>
+            Người mua có trách nhiệm thanh toán phí vận chuyển (nếu có) và tuân thủ các quy định của dịch vụ vận chuyển mà họ đã lựa chọn.
+          </p>
+          
+          <div className="heading1">
+            Thanh Toán Phí Vận Chuyển
+          </div>
+          <p>
+            Hệ thống liên kết với các đối tác vận chuyển uy tín, cung cấp các phương thức vận chuyển đa dạng cho người mua. Người mua có thể chọn dịch vụ vận chuyển từ danh sách các đối tác của hệ thống và thanh toán chi phí tương ứng.
+          </p>
+          <p>
+            Hệ thống không thu thêm bất kỳ khoản phí nào từ phí vận chuyển.
+          </p>
+
+          <div className="heading1">
+            Hỗ Trợ và Khiếu Nại
+          </div>
+          <p>
+            Trong trường hợp có vấn đề liên quan đến vận chuyển hoặc việc nhận hàng, người mua và người bán có thể liên hệ với nhóm hỗ trợ của hệ thống để được giúp đỡ và giải quyết vấn đề.
+          </p>
+          <p>
+            Hệ thống không thu thêm bất kỳ khoản phí nào từ phí vận chuyển.
+          </p>
+
         </div>
       </div>
     );
@@ -139,61 +139,56 @@ export default function PolicyContent() {
   const Payment = () => {
     return (
       <div className="ThePolicy">
-        <div className="policy-header">Chính sách vận chuyển</div>
+        <div className="policy-header">Chính sách thanh toán</div>
         <div className="policy-content">
           <div className="text-strong">
-            Khách hàng có thể tham khảo các phương thức thanh toán sau đây và
-            lựa chọn áp dụng phương thức phù hợp:
+            Chính sách thanh toán này được thiết kế để đảm bảo tính công bằng và minh bạch cho cả người mua và người bán trên website đấu giá mô hình xe Diecast của chúng tôi.
           </div>
           <div className="heading1">
-            Thanh toán trực tiếp (Khách hàng nhận hàng tại showroom):
+            Thanh toán cho Người Bán Hàng
           </div>
           <p>
-            Quý khách có thể sử dụng tiền mặt, chuyển khoản, VNPAY QR hoặc quẹt
-            thẻ…
+            Khi một phiên đấu giá kết thúc và người mua đã được xác định, hệ thống sẽ tự động chuyển số tiền từ tài khoản của người mua đến tài khoản của người bán.
+          </p>
+          <p>
+            Người bán có thể yêu cầu rút tiền từ tài khoản của họ bất cứ lúc nào. Số tiền sẽ được chuyển vào tài khoản ngân hàng đã đăng ký trong vòng 3-5 ngày làm việc.
           </p>
 
           <div className="heading1">
-            Thanh toán sau (COD – giao hàng và thu tiền tận nơi):
+            Nạp Tiền vào Tài Khoản
           </div>
           <p>
-            Quý khách hàng ở các tỉnh tp trên lãnh thổ Việt Nam, khi nhận hàng
-            và kiểm tra hàng xong quý khách sẽ thanh toán tiền mặt cho nhân viên
-            giao hàng.
+            Người tham gia đấu giá cần nạp tiền vào tài khoản trước khi tham gia các phiên đấu giá.
+          </p>
+          <p>
+            Hệ thống chấp nhận thanh toán qua các phương thức như thẻ tín dụng, chuyển khoản ngân hàng, ví điện tử, và các hình thức thanh toán trực tuyến phổ biến khác.
+          </p>
+          <p>
+            Số tiền nạp vào tài khoản sẽ được hiển thị trong ví điện tử trên trang cá nhân của người tham gia.
           </p>
 
           <div className="heading1">
-            Thanh toán online qua thẻ tín dụng, chuyển khoản:
+            Chi Phí và Phí Dịch Vụ
           </div>
           <p>
-            Đối với các bạn ở xa Tp Hồ Chí Minh, muốn sử dụng hình thức COD
-            (thanh toán khi nhận hàng), các bạn vui lòng liên hệ với BK Robotic
-            để được hướng dẫn. Đây là hình thức thanh toán COD (Cash on
-            Delivery) – Các bạn sẽ thanh toán trực tiếp cho bên chuyển phát sau
-            khi đã nhận được hàng. Với hình thức này, để đảm bảo đơn hàng được
-            xác nhận, BK Robotic có 2 hình thức mua hàng và thanh toán như
-            sau:BK Robotic chấp nhận hình thức thanh toán chuyển khoản ngân
-            hàng, quý khách có thể chuyển khoản vào một trong các ngân hàng dưới
-            đây:
+            Người bán sẽ phải trả phí đăng bài đấu giá, dựa trên mức độ nổi bật và thời lượng của bài đăng.
           </p>
-          <ul>
-            <li>
-              <div className="text-strong">
-                {" "}
-                Ngân hàng OCB – Chi nhánh Thủ Đức
-              </div>
-              <div>Tên tài khoản: Trương Ngọc Trúc Quỳnh</div>
-              <div>Số Tài khoản: 0003100013385004</div>
-            </li>
-            <li>
-              <div className="text-strong">
-                {" "}
-                Ngân hàng BIDV – Chi nhánh Thủ Đức
-              </div>
-              <div>Tên tài khoản: Nguyễn Trâm Anh</div>
-              <div>Số Tài khoản: 11110000088864</div>
-            </li>
-          </ul>
+          <p>
+            Hệ thống sẽ thu phí cho mỗi sản phẩm được đấu giá thành công, dựa trên tổng giá trị của sản phẩm.
+          </p>
+          <p>
+            Có sẵn các gói đăng ký làm thành viên VIP với các ưu đãi riêng biệt và phí đăng ký phù hợp.
+          </p>
+
+          <div className="heading1">
+            Bảo Mật Thanh Toán
+          </div>
+          <p>
+            Người bán sẽ phải trả phí đăng bài đấu giá, dựa trên mức độ nổi bật và thời lượng của bài đăng.
+          </p>
+          <p>
+            Hệ thống sẽ thu phí cho mỗi sản phẩm được đấu giá thành công, dựa trên tổng giá trị của sản phẩm.
+          </p>
         </div>
       </div>
     );
@@ -205,19 +200,14 @@ export default function PolicyContent() {
         <div className="policy-header">Chính sách đổi trả, khiếu nại</div>
         <div className="policy-content">
           <div className="text-strong">
-            Chúng tôi có quy trình xử lý chuyên nghiệp trong trường hợp quý
-            khách có yêu cầu đổi trả sản phẩm hoặc khiếu nại về sản phậm, chất
-            lượng dịch vụ. Với tinh thần bảo vệ quyền lợi khách hàng là trên
-            hết, quý khách có thể an tâm mua sắm tại BK Robotic.
           </div>
           <div className="heading1">Điều kiện đổi trả </div>
           <ul>
             <li>
-              Sản phẩm còn nguyên vẹn, đầy đủ bao bì vỏ hộp, hóa đơn mua hàng,
-              máy còn nguyên vẹn không bị trầy xước.
+              Sản phẩm phải đạt tiêu chuẩn về chất lượng và không bị hỏng hóc, trầy xước hoặc có bất kỳ vấn đề nào ảnh hưởng đến giá trị sử dụng.
             </li>
-            <li>Thời gian: trong vòng 07 ngày kể từ ngày mua.</li>
-            <li>Đủ điều kiện bảo hành của nhà sản xuất.</li>
+            <li>Thời gian: Khách hàng có thời gian 7 ngày kể từ khi nhận được sản phẩm để yêu cầu đổi trả.</li>
+            <li>Yêu cầu: Khách hàng cần cung cấp thông tin chính xác về lý do đổi trả và trạng thái của sản phẩm.</li>
             <div style={{ fontStyle: "oblique" }}>
               <div className="text-strong">Lưu ý:</div> Các sản phẩm không được
               đổi trả: đã hết thời gian đổi trả, không còn đầy đủ, nguyên vẹn,
@@ -229,26 +219,21 @@ export default function PolicyContent() {
             <li style={{ fontWeight: "bold" }}>
               <p style={{ display: "inline-block" }}>Đối tượng khiếu nại:</p>{" "}
               <p style={{ display: "inline-block", fontWeight: "400" }}>
-                Là tổ chức, cá nhân có sử dụng các sản phẩm, dịch vụ do BK
-                Robotic cung cấp (trường hợp đặc biệt khách hàng có thể ủy quyền
-                cho người đại diện hợp pháp).
+                Khách hàng có thể khiếu nại về sản phẩm không đúng mô tả, sản phẩm hỏng hóc do vận chuyển, hoặc bất kỳ vấn đề nào liên quan đến giao dịch mà họ cảm thấy không hài lòng.
               </p>
             </li>
 
             <li style={{ fontWeight: "bold" }}>
               <p style={{ display: "inline-block" }}>Hình thức khiếu nại:</p>{" "}
               <p style={{ display: "inline-block", fontWeight: "400" }}>
-                Khách hàng khi có khiếu nại, phản ánh về sản phẩm, dịch vụ do BK
-                Robotic cung cấp có thể khiếu nại trực tiếp tại các Showroom/Đại
-                lí hoặc gián tiếp bằng cách gọi điện đến cửa hàng, gửi mail, gửi
-                văn bản hoặc các hình thức khác…
+                Khách hàng có thể gửi khiếu nại qua email, tin nhắn trên hệ thống, hoặc thông qua số hotline hỗ trợ khách hàng.
               </p>
             </li>
 
             <li style={{ fontWeight: "bold" }}>
               <p style={{ display: "inline-block" }}>Nguyên tắc giải quyết:</p>{" "}
               <p style={{ display: "inline-block", fontWeight: "400" }}>
-                BK Robotic có quyền từ chối và không giải quyết các khiếu nại
+                Hệ thống có quyền từ chối và không giải quyết các khiếu nại
                 không có cơ sở, bằng chứng hoặc không trực thuộc đơn vị giải
                 quyết.
               </p>
@@ -256,50 +241,34 @@ export default function PolicyContent() {
           </ul>
           <div className="heading1">Quy trình xử lý khiếu nại</div>
           <p style={{ display: "inline-block", fontWeight: "bold" }}>
-            Bước 1. Tiếp nhận và hồi âm khiếu nại{" "}
+            Bước 1: Tiếp nhận khiếu nại{" "}
           </p>{" "}
-          <p style={{ display: "inline-block", fontWeight: "400" }}>
-            Mọi CBNV, đơn vị, Showroom thuộc BK Robotic đều có trách nhiệm tiếp
-            nhận phản ánh, khiếu nại của khách hàng. – Gửi văn bản hồi âm khiếu
-            nại trong vòng 03 ngày kể từ ngày nhận được khiếu nại (đối với khiếu
-            nại bằng văn bản, email, điện thoại…) hoặc gửi khách hàng bản copy
-            phiếu tiếp nhận khiếu nại có xác nhận của cấp TP Dịch vụ Khách hàng
-            đối với khiếu nại trực tiếp tại điểm giao dịch.
+          <p>
+            Hệ thống tiếp nhận khiếu nại từ khách hàng qua các kênh liên lạc.
           </p>
           <p style={{ display: "inline-block", fontWeight: "bold" }}>
-            Bước 2: Xác minh, xử lý
+            Bước 2: Xác minh thông tin
           </p>{" "}
-          <p style={{ display: "inline-block", fontWeight: "400" }}>
-            Sau khi tiếp nhận được phản ánh, khiếu nại của khách hàng, bộ phận
-            tiếp nhận sẽ chủ động kiểm tra, giải quyết trong phạm vi chức năng
-            và quyền hạn của mình. – Các khiếu nại không thuộc thẩm quyền giải
-            quyết của bộ phận tiếp nhận sẽ được phối hợp chuyển cấp cao hơn để
-            giải quyết theo thẩm quyền (Không quá ½ ngày kể từ khi tiếp nhận).
+          <p>
+            Hệ thống xác minh thông tin và kiểm tra vấn đề được khiếu nại.
           </p>
           <p style={{ display: "inline-block", fontWeight: "bold" }}>
-            Bước 3: Đơn vị, Cá nhân có thẩm quyền xem xét, giải quyết{" "}
+            Bước 3: Liên hệ với các bên{" "}
           </p>{" "}
-          <p style={{ display: "inline-block", fontWeight: "400" }}>
-            Đơn vị, cá nhân thuộc thẩm quyền theo quy định của BK Robotic tiến
-            hành kiểm tra, xác minh thông tin khiếu nại của khách hàng để đưa ra
-            kết luận cuối cùng
+          <p>
+            Hệ thống liên hệ với cả người mua và người bán để làm rõ tình hình và tìm kiếm giải pháp.
           </p>
           <p style={{ display: "inline-block", fontWeight: "bold" }}>
-            Bước 4: Trả lời khách hàng{" "}
+            Bước 4: Giải quyết vấn đề{" "}
           </p>{" "}
-          <p style={{ display: "inline-block", fontWeight: "400" }}>
-            Khi có kết quả kiểm tra, xác minh BK Robotic sẽ trả lời khách hàng
-            theo nhiều hình thức: Gọi điện thoại, đến gặp trực tiếp, gửi văn bản
-            phúc đáp, gửi mail……tùy theo hình thức khiếu nại ban đầu. – Nếu
-            khách hàng không đồng ý với kết quả giải quyết: Trong thời gian 30
-            ngày kế tiếp bộ phận chức năng có trách nhiệm kiểm tra lại từ đầu
-            thông tin khiếu nại và phúc đáp cho khách hàng.
+          <p>
+            Hệ thống giải quyết vấn đề một cách công bằng và nhanh chóng, bảo đảm sự hài lòng của cả hai bên.
           </p>
           <p style={{ display: "inline-block", fontWeight: "bold" }}>
-            Bước 5: Kết thúc khiếu nại{" "}
+            Bước 5: Thông báo kết quả{" "}
           </p>{" "}
-          <p style={{ display: "inline-block", fontWeight: "400" }}>
-            Lưu hồ sơ và kết thúc khiếu nại.
+          <p>
+            Kết quả của quá trình giải quyết sẽ được thông báo cho cả người mua và người bán qua email hoặc tin nhắn trên hệ thống.
           </p>
         </div>
       </div>

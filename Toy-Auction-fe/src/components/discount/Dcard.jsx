@@ -6,6 +6,7 @@ import Ddata from "./Ddata";
 import "../newarrivals/style.css";
 import { Link } from "react-router-dom";
 import Data from "../Data";
+import Ndata from "../newarrivals/Ndata";
 const Dcard = () => {
   const settings = {
     dots: false,
@@ -17,16 +18,21 @@ const Dcard = () => {
   return (
     <>
       <Slider {...settings}>
-        {Data.productItems.map((value, index) => {
+        {Ndata.map((value, index) => {
           return (
             <>
               <div className="box product" key={index}>
                 <div className="img">
                   <a href={`/detail/${value.id}`}>
-                    <img src={value.cover[0]} alt="" width="100%" />
+                    <img
+                      className="h-40"
+                      src={value.cover}
+                      alt=""
+                      width="100%"
+                    />
                   </a>
                 </div>
-                <h4>{value.name}</h4>
+                <h4 className="h-30 truncate">{value.name}</h4>
                 <span>{value.price}</span>
                 <div className="div-product-button-other">
                   <Link

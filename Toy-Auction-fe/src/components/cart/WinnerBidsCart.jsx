@@ -43,7 +43,7 @@ const WinnerBidsCart = () => {
 
             <div class="mt-8">
               <ul class="space-y-4 border p-2 rounded-md">
-                {bids.map((bid) => (
+                {bids?.map((bid) => (
                   <CartItem
                     bid={bid}
                     handleChangeSelectedBids={handleChangeSelectedBids}

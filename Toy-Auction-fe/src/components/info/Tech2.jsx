@@ -7,9 +7,6 @@ function Tech2() {
 
   <div className="news-topic">
     <div className="news-topic-name">Tin tức mới</div>
-    <div className="readmore">
-      Xem thêm <ion-icon name="chevron-forward-outline" />
-    </div>
   </div>
   <div className="news-container">
     <div className="news-item">

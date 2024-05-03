@@ -14,8 +14,8 @@ const Catg = () => {
     <>
       <div className="category">
         <div className="d_flex">
+          <h1 className="text-base font-bold">Loại xe</h1>
           <h1 className="text-base font-bold">Xuất xứ</h1>
-          <h1 className="text-base font-bold">Nhãn hàng</h1>
         </div>
         {branches.map((branch, index) => {
           return (

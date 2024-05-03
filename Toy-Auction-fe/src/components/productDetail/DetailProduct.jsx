@@ -250,11 +250,10 @@ function DetailProduct() {
               disabled={!isAuctionActive(depositStartTime, depositEndTime)}
               onClick={handleBidSubmit}
               className={`py-2 px-4 rounded-r focus:outline-none focus:shadow-outline 
-              ${
-                !isAuctionActive(depositStartTime, depositEndTime)
+              ${!isAuctionActive(depositStartTime, depositEndTime)
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-blue-500 hover:bg-blue-700 text-white font-bold"
-              }`}
+                }`}
             >
               Bid
             </button>
@@ -278,9 +277,8 @@ function DetailProduct() {
             {auction?.bids.map((bid, index) => (
               <div
                 key={index}
-                className={`border rounded-lg ${
-                  index === auction.bids.length - 1 ? "bg-green-100" : ""
-                }`}
+                className={`border rounded-lg ${index === auction.bids.length - 1 ? "bg-green-100" : ""
+                  }`}
               >
                 <div className="flex justify-between px-4 py-2">
                   <p className="font-bold">Bidder: {bid.bidder.username}</p>
@@ -362,50 +360,24 @@ function DetailProduct() {
         {show && (
           <div className="detail-product">
             <div className="detail-product-item">
-              <div className="field">Hạn bảo hành:</div>
-              <div className="desc">12 tháng</div>
+              <div className="field">Chất liệu:</div>
+              <div className="desc">Diecast</div>
+            </div>
+            <div className="detail-product-item">
+              <div className="field">Tỉ lệ:</div>
+              <div className="desc">1/18</div>
+            </div>
+            <div className="detail-product-item">
+              <div className="field">Nhà sản xuất:</div>
+              <div className="desc">Hotwheels</div>
             </div>
             <div className="detail-product-item">
               <div className="field">Kích thước:</div>
-              <div className="desc">340 x 85 x 340 mm</div>
-            </div>
-            <div className="detail-product-item">
-              <div className="field">Xuất xứ:</div>
-              <div className="desc">Trung Quốc</div>
-            </div>
-            <div className="detail-product-item">
-              <div className="field">Dung tích chứa bụi:</div>
-              <div className="desc">200 ml</div>
-            </div>
-            <div className="detail-product-item">
-              <div className="field">Khối lượng:</div>
-              <div className="desc">3 kg</div>
-            </div>
-            <div className="detail-product-item">
-              <div className="field">Dung lượng pin:</div>
-              <div className="desc">3400mAh</div>
-            </div>
-            <div className="detail-product-item">
-              <div className="field">Lực hút:</div>
-              <div className="desc">5W (~4200pa)</div>
+              <div className="desc">20 x 7 x 20 cm</div>
             </div>
             <div className="detail-product-item">
               <div className="field">Màu sắc:</div>
-              <div className="desc">Đen, Xám</div>
-            </div>
-            <div className="detail-product-item">
-              <div className="field">Tính năng:</div>
-              <div className="desc">
-                Điều khiển qua ứng dụng , Tự động quay về đế sạc , Tự động điều
-                chỉnh sức hút
-              </div>
-            </div>
-            <div className="detail-product-item">
-              <div className="field">Tiện ích:</div>
-              <div className="desc">
-                Hộp chứa bụi EZ - dễ dàng vệ sinh với nướcLên lịch làm việc và
-                theo dõi thông qua app kết nối với điện thoại thông minh
-              </div>
+              <div className="desc">Đen, xám</div>
             </div>
           </div>
         )}

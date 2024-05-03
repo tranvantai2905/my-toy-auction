@@ -12,16 +12,20 @@ const CartItem = ({ bid, handleChangeSelectedBids = () => {} }) => {
   const [checked, setChecked] = useState(false);
 
   const handleChangeSelectBox = () => {
-    // if (!bid.isPayMent) {
-    //   setChecked((checked) => !checked);
-    //   handleChangeSelectedBids(bid);
-    // }
-    setChecked((checked) => !checked);
-    handleChangeSelectedBids(bid);
+    if (!bid.isPayMent) {
+      setChecked((checked) => !checked);
+      handleChangeSelectedBids(bid);
+    }
+    // setChecked((checked) => !checked);
+    // handleChangeSelectedBids(bid);
   };
 
   return (
-    <div className="flex gap-1 items-center justify-between">
+    <div
+      className={`flex gap-1 items-center justify-between ${
+        bid.isPayMent ? `opacity-25` : `opacity-100`
+      }`}
+    >
       <Checkbox
         checked={checked}
         onChange={handleChangeSelectBox}

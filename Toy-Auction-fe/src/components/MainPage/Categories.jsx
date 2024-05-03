@@ -22,7 +22,21 @@ const Categories = () => {
       cateImg: "./images/category/cat5.png",
       cateName: "Quà tặng",
     },
+    {
+      cateImg: "./images/category/cat6.png",
+      cateName: "Dụng cụ nghệ thuật",
+    },
+    {
+      cateImg: "./images/category/cat7.png",
+      cateName: "Đồ dùng làm đẹp",
+    },
+    {
+      cateImg: "./images/category/cat9.png",
+      cateName: "Sản phẩm cho bé",
+    },
   ];
+
+  const topData = data.slice(0, 3);
 
   return (
     <>
@@ -31,12 +45,12 @@ const Categories = () => {
           <img src="./images/category/cat12.png" alt="" />
           <input type="search" name="search" id="search" className="w-full h-[20px] border border-solid"/>
         </div>
-        {data.map((value, index) => {
+        {topData.map((value, index) => {
           return (
             <div className="box f_flex" key={index}>
               <img src={value.cateImg} alt="" />
               <span>{value.cateName}</span>
-            </div>
+            </div>  
           );
         })}
       </div>

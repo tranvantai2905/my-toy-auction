@@ -25,6 +25,7 @@ function DetailProduct() {
   const [errorMessage, setErrorMessage] = useState("");
   const [depositStartTime, setDepositStartTime] = useState(null);
   const [depositEndTime, setDepositEndTime] = useState(null);
+  const [needRefesh, setNeedFresh] = useState(0);
 
   const handleBidChange = (event) => {
     setBid(event.target.value);
@@ -40,6 +41,7 @@ function DetailProduct() {
     try {
       await postBid(id, bid, userDetails.user._id);
       console.log(`Bid submitted: ${bid}`);
+      setNeedFresh((pr) => pr + 1);
     } catch (error) {
       setErrorMessage(`Error: ${error.message}`);
       setIsModalVisible(true);
@@ -56,7 +58,7 @@ function DetailProduct() {
 
   useEffect(() => {
     getAuction();
-  }, []);
+  }, [needRefesh]);
 
   const [style, setStyle] = useState(false);
 
@@ -250,10 +252,11 @@ function DetailProduct() {
               disabled={!isAuctionActive(depositStartTime, depositEndTime)}
               onClick={handleBidSubmit}
               className={`py-2 px-4 rounded-r focus:outline-none focus:shadow-outline 
-              ${!isAuctionActive(depositStartTime, depositEndTime)
+              ${
+                !isAuctionActive(depositStartTime, depositEndTime)
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-blue-500 hover:bg-blue-700 text-white font-bold"
-                }`}
+              }`}
             >
               Bid
             </button>
@@ -277,8 +280,9 @@ function DetailProduct() {
             {auction?.bids.map((bid, index) => (
               <div
                 key={index}
-                className={`border rounded-lg ${index === auction.bids.length - 1 ? "bg-green-100" : ""
-                  }`}
+                className={`border rounded-lg ${
+                  index === auction.bids.length - 1 ? "bg-green-100" : ""
+                }`}
               >
                 <div className="flex justify-between px-4 py-2">
                   <p className="font-bold">Bidder: {bid.bidder.username}</p>

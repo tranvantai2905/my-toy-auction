@@ -114,12 +114,11 @@ const getMyWinnerBids = async (req, res) => {
 const postBidPayment = async (req, res) => {
   const userId = req.userId;
   const bidId = req.params.bidId;
-
   try {
     const bid = await Bid.findOne({
       bidder: userId,
       isWin: true,
-      id: bidId,
+      _id: bidId,
     }).populate({
       path: "auction",
       populate: {

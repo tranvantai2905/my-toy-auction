@@ -18,7 +18,19 @@ import Policy from "./pages/policy/Policy";
 import InfoPage from "./pages/info/InfoPage";
 import Detail from "./pages/ProductDetailPage";
 import QuestionsPage from "./pages/questions/QuestionsPage";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+export const notify = (info) => {
+  toast.warn(`${info}`, {
+    position: "bottom-left",
+  });
+};
+export const notifySuccess = (info) => {
+  toast.success(`${info}`, {
+    position: "bottom-left",
+  });
+};
 function App() {
   return (
     <>
@@ -57,6 +69,7 @@ function App() {
           <Footer />
         </Router>
       </AuthProvider>
+      <ToastContainer draggable="mouse" />
     </>
   );
 }

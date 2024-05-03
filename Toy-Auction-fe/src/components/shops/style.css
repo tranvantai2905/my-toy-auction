@@ -45,7 +45,7 @@
 }
 .shop .product img {
   width: 70%;
-  height: 50%;
+  height: 120px;
 }
 .shop .product {
   transition: 0.5s;

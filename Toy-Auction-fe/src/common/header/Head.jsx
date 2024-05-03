@@ -34,6 +34,10 @@ const Head = () => {
     history.push("/policy");
   }
 
+  const handlePromotions = () => {
+    history.push("/promotions");
+  }
+
   return (
     <>
       <section className="head">
@@ -41,7 +45,7 @@ const Head = () => {
           <div className="left row RText flex justify-start items-center">
           {userDetails.user ? (
               <div className="flex items-center">
-                <p className="text-sm">Chào mừng bạn trở lại, {userDetails.user.username}!</p>
+                <p className="text-sm">Chào mừng bạn trở lại, <span className="hover:underline"><a href="/user" style={{color:"#E94560"}}>{userDetails.user.username}</a></span>!</p>
               </div>
             ) : (
               <div>
@@ -49,7 +53,7 @@ const Head = () => {
               </div>
             )}
           </div>
-          <div className="right row RText flex justify-end items-center">
+          <div style={{width:"75%"}} className="right row RText flex justify-end items-center">
             <label></label>
             <div>
               <button
@@ -81,6 +85,14 @@ const Head = () => {
                 onClick={handleQuestions}
               >
                 Hỏi đáp
+              </button>
+            </div>
+            <div>
+              <button
+                className="text-sm hover:underline"
+                onClick={handlePromotions}
+              >
+                Khuyến mãi
               </button>
             </div>
             {userDetails.user ? (

@@ -23,7 +23,7 @@ const CartItem = ({ bid, handleChangeSelectedBids = () => {} }) => {
   return (
     <div
       className={`flex gap-1 items-center justify-between ${
-        bid.isPayMent ? `opacity-25` : `opacity-100`
+        bid.isPayMent ? `hidden` : `opacity-100`
       }`}
     >
       <Checkbox
@@ -47,7 +47,7 @@ const CartItem = ({ bid, handleChangeSelectedBids = () => {} }) => {
 
           <dl class="mt-0.5 space-y-px text-[14px] text-gray-600 max-w-96">
             <div className="">
-              <dt class="inline underline">Description: </dt>
+              <dt class="inline underline">Miêu tả: </dt>
               <dd class="inline break-words line-clamp-2">
                 {product?.description}
               </dd>
@@ -59,12 +59,12 @@ const CartItem = ({ bid, handleChangeSelectedBids = () => {} }) => {
           <div className="flex flex-col gap-2">
             <div class="flex gap-2 justify-center items-center h-8 w-fit p-2 rounded border-gray-200 bg-gray-50 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none">
               <FaCoins color="red" />
-              <p>Amount: </p>
+              <p>Tiền trúng đấu giá: </p>
               <p>{`${formatCurrency(bid?.amount)}`}</p>
             </div>
             <div class="flex gap-2 justify-center items-center h-8 w-fit p-2 rounded border-gray-200 bg-gray-50 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none">
               <FaCoins color="blue" />
-              <p>Application Fee: </p>
+              <p>Phí dịch vụ: </p>
               <p>{`${formatCurrency(
                 auction?.propertyInfo?.applicationFee
               )}`}</p>
@@ -72,7 +72,7 @@ const CartItem = ({ bid, handleChangeSelectedBids = () => {} }) => {
             {bid?.isPayMent && (
               <div class="flex gap-2 justify-center items-center h-8 w-fit p-2 rounded border-gray-200 bg-gray-50 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none">
                 <IoCheckmarkDoneCircleOutline color="green" />
-                <p>Paid off </p>
+                <p>Đã trả </p>
               </div>
             )}
           </div>
@@ -82,12 +82,12 @@ const CartItem = ({ bid, handleChangeSelectedBids = () => {} }) => {
           >
             <FaRegEye />
             <p className="bg-black text-blue-50 rounded-full text-xs group-hover:opacity-100 opacity-0 absolute top-10 left-[-20px] p-1 w-[150px] transition-opacity duration-1000">
-              View Auction Detail
+              Xem chi tiết đấu giá
             </p>
           </Link>
 
           <button class="text-gray-600 transition hover:text-red-600">
-            <span class="sr-only">Remove item</span>
+            <span class="sr-only">Xóa sản phẩm</span>
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
